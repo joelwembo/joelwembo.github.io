@@ -321,11 +321,44 @@
             </div>
             <div class="resume-viewer-container wow fadeInUp" data-wow-delay=".4s">
               <div class="resume-viewer-wrapper">
-                <iframe 
-                  src="JoelOtepaWemboCloudAIDataArchitect.pdf#toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=page-width&view=FitH"
-                  class="resume-pdf-viewer"
-                  title="Joel Wembo Resume">
-                </iframe>
+                <div id="pdf-container">
+                  <iframe 
+                    id="resume-pdf-iframe"
+                    src=""
+                    class="resume-pdf-viewer"
+                    title="Joel Wembo Resume"
+                    allow="fullscreen"
+                    loading="lazy">
+                  </iframe>
+                  <object 
+                    id="resume-pdf-object"
+                    data="JoelOtepaWemboCloudAIDataArchitect.pdf#toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=page-width&view=FitH"
+                    type="application/pdf"
+                    class="resume-pdf-viewer"
+                    style="display: none;">
+                    <p>Your browser does not support PDFs. 
+                      <a href="JoelOtepaWemboCloudAIDataArchitect.pdf" target="_blank" download="JoelOtepaWemboCloudAIDataArchitect.pdf">
+                        Click here to download the PDF
+                      </a>
+                    </p>
+                  </object>
+                </div>
+                <div id="pdf-fallback" class="pdf-fallback" style="display: none;">
+                  <div class="pdf-fallback-content">
+                    <i class="fas fa-file-pdf" style="font-size: 48px; color: #6366f1; margin-bottom: 20px;"></i>
+                    <h3>PDF Viewer Not Available</h3>
+                    <p>Your browser may not support embedded PDFs. Please download the resume to view it.</p>
+                    <a href="JoelOtepaWemboCloudAIDataArchitect.pdf" target="_blank" download="JoelOtepaWemboCloudAIDataArchitect.pdf" class="btn-resume-download">
+                      <i class="fas fa-download"></i>
+                      Download Resume PDF
+                    </a>
+                    <br><br>
+                    <a href="JoelOtepaWemboCloudAIDataArchitect.pdf" target="_blank" class="btn-resume-download" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
+                      <i class="fas fa-external-link-alt"></i>
+                      Open in New Tab
+                    </a>
+                  </div>
+                </div>
                 <div class="resume-overlay-top"></div>
               </div>
             </div>
@@ -808,6 +841,113 @@
         });
       }
 
+      // PDF Error Handling
+      function handlePdfError() {
+        const iframe = document.getElementById('resume-pdf-iframe');
+        const object = document.getElementById('resume-pdf-object');
+        const fallback = document.getElementById('pdf-fallback');
+        
+        if (iframe) iframe.style.display = 'none';
+        if (object) object.style.display = 'none';
+        if (fallback) fallback.style.display = 'flex';
+      }
+
+      // Check if PDF loads successfully
+      function checkPdfLoad() {
+        const iframe = document.getElementById('resume-pdf-iframe');
+        const object = document.getElementById('resume-pdf-object');
+        const fallback = document.getElementById('pdf-fallback');
+        const pdfUrl = 'JoelOtepaWemboCloudAIDataArchitect.pdf#toolbar=1&navpanes=1&scrollbar=1&page=1&zoom=page-width&view=FitH';
+        
+        if (!iframe || !object) return;
+        
+        let pdfLoaded = false;
+        let checkCount = 0;
+        const maxChecks = 10; // Check for 5 seconds (10 * 500ms)
+        
+        // First, try iframe method
+        iframe.src = pdfUrl;
+        
+        // Set up iframe load handler
+        iframe.onload = function() {
+          pdfLoaded = true;
+          object.style.display = 'none';
+          if (fallback) fallback.style.display = 'none';
+        };
+        
+        // If iframe fails, try object tag
+        iframe.onerror = function() {
+          if (!pdfLoaded) {
+            tryObjectTag();
+          }
+        };
+        
+        function tryObjectTag() {
+          if (pdfLoaded) return;
+          
+          iframe.style.display = 'none';
+          object.style.display = 'block';
+          
+          object.onload = function() {
+            pdfLoaded = true;
+            if (fallback) fallback.style.display = 'none';
+          };
+          
+          object.onerror = function() {
+            if (!pdfLoaded) {
+              handlePdfError();
+            }
+          };
+        }
+        
+        // Periodic check - if PDF doesn't load in reasonable time, show fallback
+        const checkInterval = setInterval(function() {
+          checkCount++;
+          
+          if (pdfLoaded) {
+            clearInterval(checkInterval);
+            return;
+          }
+          
+          // Check if iframe has loaded (even with CORS, we can check dimensions)
+          if (iframe.style.display !== 'none' && iframe.offsetHeight > 100) {
+            // Iframe seems to have content
+            pdfLoaded = true;
+            clearInterval(checkInterval);
+            object.style.display = 'none';
+            if (fallback) fallback.style.display = 'none';
+            return;
+          }
+          
+          // Check if object has loaded
+          if (object.style.display !== 'none' && object.offsetHeight > 100) {
+            pdfLoaded = true;
+            clearInterval(checkInterval);
+            if (fallback) fallback.style.display = 'none';
+            return;
+          }
+          
+          // After max checks, if still not loaded, try object tag or show fallback
+          if (checkCount >= maxChecks) {
+            clearInterval(checkInterval);
+            if (!pdfLoaded) {
+              // Try object tag one more time
+              if (iframe.style.display !== 'none') {
+                tryObjectTag();
+                // Give object tag 2 more seconds
+                setTimeout(function() {
+                  if (!pdfLoaded) {
+                    handlePdfError();
+                  }
+                }, 2000);
+              } else {
+                handlePdfError();
+              }
+            }
+          }
+        }, 500);
+      }
+
       // Enter key support
       document.addEventListener('DOMContentLoaded', function() {
         const chatInput = document.getElementById('chat-input');
@@ -825,6 +965,9 @@
             closeChatbot();
           }
         });
+
+        // Check PDF loading
+        checkPdfLoad();
       });
     </script>
     <!-- JS Scripts -->
