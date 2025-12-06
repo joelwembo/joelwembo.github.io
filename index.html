@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/sans-serif.css">
     <link rel="icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
     <style>
       img.rounded-corners {
@@ -131,7 +131,7 @@
         <div class="intro text-center">
           <img class="wow fadeInUp" data-wow-delay= ".1s" src="assets/images/logo.png" width="60" height="60" alt="Logo" />
           <h4 class="wow fadeInUp" data-wow-delay= ".2s">AI Agent Developer | Cloud Solutions Architect | Data Center Architect</h4>
-          <h1 class="wow fadeInUp" data-wow-delay= ".3s">Joel Wembo, specializing in AI Agents as a Service, <br class="hidden-xs hidden-sm"> enterprise cloud architecture, and data center operations.
+          <h1 class="wow fadeInUp" data-wow-delay= ".3s">Joel Wembo, specializing in <span class="gradient-text">AI Agents as a Service</span>, <br class="hidden-xs hidden-sm"> enterprise cloud architecture, and data center operations.
             Building intelligent agentic systems <br class="hidden-xs hidden-sm"> with LangChain, AWS Bedrock, PyTorch & MLOps</h1>
             <a href="portfolio.html" class="btn btn-action wow fadeInUp" data-wow-delay= ".4s">See Portfolio</a>
         </div>
@@ -139,7 +139,7 @@
         <div class="portfolio">
           <div class="container">
             <div class="portfolio-intro">
-              <h1 class="wow fadeInUp" data-wow-delay= ".1s">Featured AI & Cloud Projects</h1>
+              <h1 class="wow fadeInUp" data-wow-delay= ".1s">Featured <span class="gradient-text">AI & Cloud</span> Projects</h1>
               <p class="wow fadeInUp" data-wow-delay= ".2s">
                 Hand-picked collection of my best AI/ML and cloud infrastructure projects. <br class="hidden-xs"> Delivering intelligent solutions that solve real-world problems.
               </p>
@@ -265,7 +265,7 @@
           <div class="container">
             <div class="inner">
               <img class="wow fadeInDown rounded-corners" data-wow-delay= ".3s" src="assets/images/person.jpeg"  width="89" height="89" alt="Joel Wembo" />
-              <h1 class="wow fadeInUp" data-wow-delay= ".2s">When it comes to AI and cloud solutions, it's not just about algorithms and infrastructure. <br class="visible-lg"> It's about understanding your vision, solving complex challenges, <br class="visible-lg"> and building intelligent systems that drive real results.
+              <h1 class="wow fadeInUp" data-wow-delay= ".2s">When it comes to <span class="gradient-text">AI and cloud solutions</span>, it's not just about algorithms and infrastructure. <br class="visible-lg"> It's about understanding your vision, solving complex challenges, <br class="visible-lg"> and building intelligent systems that drive real results.
               </h1>
               <img class="wow fadeInUp" data-wow-delay= ".3s" src="assets/images/signature.png" alt="Signature" />
             </div>
@@ -275,10 +275,10 @@
         <div class="footer">
           <div class="container">
             <div class="cta text-center">
-              <h1 class="wow fadeInUp" data-wow-delay= ".1s">Let's get to work <span>!</span></h1>
-                <a class="wow fadeInUp" data-wow-delay= ".2s" href="mailto:joelwembo@outlook.com">joelwembo@outlook.com</a>
+              <h1 class="wow fadeInUp" data-wow-delay= ".1s">Let's get to work <span class="gradient-text">!</span></h1>
+                <a class="wow fadeInUp" data-wow-delay= ".2s" href="mailto:joelwembo@outlook.com" style="color: #818cf8; text-decoration: none; transition: color 0.3s ease;">joelwembo@outlook.com</a>
                 <br>
-                <a class="wow fadeInUp" data-wow-delay= ".3s" href="tel:+639455206995">+639455206995</a>
+                <a class="wow fadeInUp" data-wow-delay= ".3s" href="tel:+63 9696203655" style="color: #818cf8; text-decoration: none; transition: color 0.3s ease;">+63 9696203655</a>
             </div>
             <div class="col-md-6 col-xs-4 nopadding">
               <div class="social">
@@ -302,6 +302,201 @@
         </div><!-- Footer -->
       </div><!-- Main -->
     </div><!--Wrapper -->
+
+    <!-- AI Chatbot Modal -->
+    <div class="chatbot-overlay" id="chatbotOverlay">
+      <div class="gemini-chat-container">
+        <!-- Header -->
+        <div class="gemini-chat-header">
+          <h3>
+            <i class="fas fa-robot" style="color: #818cf8;"></i>
+            AI Deployment Agent
+          </h3>
+          <button class="close-chat" onclick="closeChatbot()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div class="gemini-chat-messages" id="chatMessages">
+          <!-- User Message -->
+          <div class="message-user chat-bubble user">
+            Deploy our full-stack application on EKS cluster AWS with SSL certificates
+          </div>
+
+          <!-- AI Response with Deployment Simulation -->
+          <div class="message-ai chat-bubble ai">
+            <div class="ai-label">
+              <i class="fas fa-sparkles"></i>
+              AI Agent
+            </div>
+            <div style="color: #fff; font-size: 14px; line-height: 1.6;">
+              I'll help you deploy your full-stack application on AWS EKS cluster with SSL certificates. Let me provision the Kubernetes infrastructure step by step.
+            </div>
+            
+            <!-- Deployment Simulation -->
+            <div class="deployment-simulation">
+              <!-- Step 1: Analyzing -->
+              <div class="deployment-step">
+                <div class="step-icon completed">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-search" style="font-size: 12px; color: #818cf8;"></i>
+                    Analyzing requirements
+                  </div>
+                  <div class="step-details">Reviewing full-stack application architecture and Kubernetes resources needed</div>
+                </div>
+              </div>
+
+              <!-- Step 2: Creating VPC -->
+              <div class="deployment-step">
+                <div class="step-icon completed">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-network-wired" style="font-size: 12px; color: #818cf8;"></i>
+                    Creating VPC & Subnets
+                  </div>
+                  <div class="step-details">Setting up virtual private cloud with public/private subnets across availability zones</div>
+                </div>
+              </div>
+
+              <!-- Step 3: Creating EKS Cluster -->
+              <div class="deployment-step">
+                <div class="step-icon processing">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-cubes" style="font-size: 12px; color: #818cf8;"></i>
+                    Creating EKS Cluster
+                  </div>
+                  <div class="step-details">Provisioning Amazon EKS cluster with managed node groups (us-east-1a, us-east-1b, us-east-1c)</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4: Configuring Ingress Controller -->
+              <div class="deployment-step">
+                <div class="step-icon processing">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-route" style="font-size: 12px; color: #818cf8;"></i>
+                    Configuring NGINX Ingress Controller
+                  </div>
+                  <div class="step-details">Setting up ingress controller with AWS Load Balancer Controller for ALB integration</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5: Deploying Application -->
+              <div class="deployment-step">
+                <div class="step-icon pending">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-rocket" style="font-size: 12px; color: #94a3b8;"></i>
+                    Deploying Full-Stack Application
+                  </div>
+                  <div class="step-details">Deploying frontend and backend services with ConfigMaps and Secrets</div>
+                </div>
+              </div>
+
+              <!-- Step 6: Configuring SSL Certificates -->
+              <div class="deployment-step">
+                <div class="step-icon pending">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-lock" style="font-size: 12px; color: #94a3b8;"></i>
+                    Configuring SSL Certificates
+                  </div>
+                  <div class="step-details">Requesting and validating SSL certificates from AWS Certificate Manager (ACM)</div>
+                </div>
+              </div>
+
+              <!-- Step 7: Setting up Ingress Rules -->
+              <div class="deployment-step">
+                <div class="step-icon pending">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-shield-alt" style="font-size: 12px; color: #94a3b8;"></i>
+                    Configuring Ingress Rules
+                  </div>
+                  <div class="step-details">Setting up ingress rules with SSL termination, TLS certificates, and routing rules</div>
+                </div>
+              </div>
+
+              <!-- Step 8: DNS Configuration -->
+              <div class="deployment-step">
+                <div class="step-icon pending">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">
+                    <i class="fas fa-globe" style="font-size: 12px; color: #94a3b8;"></i>
+                    Configuring DNS & Route 53
+                  </div>
+                  <div class="step-details">Setting up Route 53 DNS records pointing to ALB with SSL/TLS enabled</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px; padding: 12px; background: rgba(99, 102, 241, 0.1); border-radius: 8px; border-left: 3px solid #6366f1;">
+              <div style="color: #818cf8; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+                <i class="fas fa-info-circle"></i> Deployment Status
+              </div>
+              <div style="color: #cbd5e1; font-size: 13px;">
+                Estimated completion time: <strong style="color: #34d399;">5-8 minutes</strong><br>
+                Current progress: <strong style="color: #818cf8;">40%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="gemini-chat-input">
+          <div class="gemini-input-wrapper">
+            <input type="text" id="chat-input" placeholder="Ask AI to deploy your full-stack on EKS cluster AWS..." autocomplete="off">
+            <button class="gemini-mic-btn" id="micBtn" onclick="toggleVoiceRecognition()" title="Voice Input">
+              <i class="fas fa-microphone"></i>
+            </button>
+            <button class="gemini-send-btn" onclick="sendMessage()" title="Send">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+          Developed by <strong>Joel Wembo</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Floating Trigger -->
+    <div id="ai-floating-trigger" onclick="openChatbot()">
+      <div class="ai-trigger-content">
+        <div class="ai-mic-icon">
+          <i class="fas fa-microphone"></i>
+        </div>
+        <span class="ai-placeholder">Ask AI to deploy your full-stack on EKS cluster AWS...</span>
+      </div>
+    </div>
+
     <!-- JS Scripts -->
     <script src="assets/js/jquery-2.1.1.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -310,6 +505,267 @@
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/validator.js"></script>
     <script src="assets/js/custom.js"></script>
+    
+    <!-- Chatbot JavaScript -->
+    <script>
+      let recognition = null;
+      let isRecording = false;
+
+      // Initialize Web Speech API
+      if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'en-US';
+
+        recognition.onresult = function(event) {
+          const transcript = event.results[0][0].transcript;
+          document.getElementById('chat-input').value = transcript;
+          toggleVoiceRecognition();
+          sendMessage();
+        };
+
+        recognition.onerror = function(event) {
+          console.error('Speech recognition error:', event.error);
+          toggleVoiceRecognition();
+        };
+
+        recognition.onend = function() {
+          if (isRecording) {
+            toggleVoiceRecognition();
+          }
+        };
+      }
+
+      function openChatbot() {
+        document.getElementById('chatbotOverlay').classList.add('active');
+        document.getElementById('chat-input').focus();
+      }
+
+      function closeChatbot() {
+        document.getElementById('chatbotOverlay').classList.remove('active');
+        if (isRecording && recognition) {
+          recognition.stop();
+          isRecording = false;
+          document.getElementById('micBtn').classList.remove('recording');
+        }
+      }
+
+      function toggleVoiceRecognition() {
+        if (!recognition) {
+          alert('Speech recognition is not supported in your browser.');
+          return;
+        }
+
+        const micBtn = document.getElementById('micBtn');
+        if (!isRecording) {
+          recognition.start();
+          isRecording = true;
+          micBtn.classList.add('recording');
+          micBtn.innerHTML = '<i class="fas fa-stop"></i>';
+        } else {
+          recognition.stop();
+          isRecording = false;
+          micBtn.classList.remove('recording');
+          micBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+        }
+      }
+
+      function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        
+        if (!message) return;
+        
+        addUserMessage(message);
+        input.value = '';
+        
+        setTimeout(() => {
+          addAIMessage(message);
+        }, 1000);
+      }
+
+      function addUserMessage(text) {
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message-user chat-bubble user';
+        messageDiv.textContent = text;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      function addAIMessage(userQuery) {
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message-ai chat-bubble ai';
+        
+        let responseHTML = `
+          <div class="ai-label">
+            <i class="fas fa-sparkles"></i>
+            AI Agent
+          </div>
+          <div style="color: #fff; font-size: 14px; line-height: 1.6; margin-bottom: 12px;">
+            I understand you want to deploy on AWS EKS. Let me help you with that!
+          </div>
+        `;
+        
+        if (userQuery.toLowerCase().includes('deploy') || userQuery.toLowerCase().includes('eks') || userQuery.toLowerCase().includes('kubernetes') || userQuery.toLowerCase().includes('aws') || userQuery.toLowerCase().includes('full-stack')) {
+          responseHTML += createDeploymentSimulation();
+        }
+        
+        messageDiv.innerHTML = responseHTML;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        if (userQuery.toLowerCase().includes('deploy') || userQuery.toLowerCase().includes('eks') || userQuery.toLowerCase().includes('kubernetes') || userQuery.toLowerCase().includes('aws') || userQuery.toLowerCase().includes('full-stack')) {
+          animateDeploymentSteps(messageDiv);
+        }
+      }
+
+      function createDeploymentSimulation() {
+        return `
+          <div class="deployment-simulation">
+            <div class="deployment-step">
+              <div class="step-icon processing">
+                <i class="fas fa-spinner fa-spin"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Analyzing requirements</div>
+                <div class="step-details">Reviewing full-stack application architecture and Kubernetes resources needed</div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Creating VPC & Subnets</div>
+                <div class="step-details">Setting up virtual private cloud with public/private subnets</div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Creating EKS Cluster</div>
+                <div class="step-details">Provisioning Amazon EKS cluster with managed node groups</div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Configuring NGINX Ingress Controller</div>
+                <div class="step-details">Setting up ingress controller with AWS Load Balancer Controller</div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Deploying Full-Stack Application</div>
+                <div class="step-details">Deploying frontend and backend services with ConfigMaps and Secrets</div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Configuring SSL Certificates</div>
+                <div class="step-details">Requesting and validating SSL certificates from AWS Certificate Manager</div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Configuring Ingress Rules</div>
+                <div class="step-details">Setting up ingress rules with SSL termination and TLS certificates</div>
+              </div>
+            </div>
+            <div class="deployment-step">
+              <div class="step-icon pending">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="step-content">
+                <div class="step-title">Configuring DNS & Route 53</div>
+                <div class="step-details">Setting up Route 53 DNS records pointing to ALB with SSL/TLS enabled</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 16px; padding: 12px; background: rgba(99, 102, 241, 0.1); border-radius: 8px; border-left: 3px solid #6366f1;">
+            <div style="color: #818cf8; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+              <i class="fas fa-info-circle"></i> Deployment Status
+            </div>
+            <div style="color: #cbd5e1; font-size: 13px;">
+              Estimated completion: <strong style="color: #34d399;">5-8 minutes</strong>
+            </div>
+          </div>
+        `;
+      }
+
+      function animateDeploymentSteps(messageDiv) {
+        const steps = messageDiv.querySelectorAll('.deployment-step');
+        steps.forEach((step, index) => {
+          setTimeout(() => {
+            const icon = step.querySelector('.step-icon');
+            const progressBar = step.querySelector('.progress-fill');
+            
+            icon.className = 'step-icon processing';
+            icon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            
+            if (progressBar) {
+              setTimeout(() => {
+                progressBar.style.width = '100%';
+              }, 500);
+            }
+            
+            setTimeout(() => {
+              icon.className = 'step-icon completed';
+              icon.innerHTML = '<i class="fas fa-check"></i>';
+              
+              if (index < steps.length - 1) {
+                const nextStep = steps[index + 1];
+                const nextIcon = nextStep.querySelector('.step-icon');
+                nextIcon.className = 'step-icon processing';
+                nextIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+              }
+            }, 2000);
+          }, index * 2500);
+        });
+      }
+
+      // Enter key support
+      document.addEventListener('DOMContentLoaded', function() {
+        const chatInput = document.getElementById('chat-input');
+        if (chatInput) {
+          chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+              sendMessage();
+            }
+          });
+        }
+
+        // Close on overlay click
+        document.getElementById('chatbotOverlay').addEventListener('click', function(e) {
+          if (e.target === this) {
+            closeChatbot();
+          }
+        });
+      });
+    </script>
     <!-- JS Scripts -->
   </body>
 </html>
