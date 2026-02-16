@@ -8,108 +8,165 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg1:#0a0a0f;--bg2:#1a1a2e;--bg3:#16213e;--bg4:#0f3460;--glass:rgba(255,255,255,0.05);--glass-border:rgba(255,255,255,0.08);--accent:#7c3aed;--accent2:#a78bfa;--text:#e2e8f0;--text-dim:#94a3b8;--user-bg:rgba(124,58,237,0.15);--bot-bg:rgba(255,255,255,0.04)}
+:root{--bg1:#0d0d0d;--bg2:#171717;--bg3:#212121;--surface:#2a2a2a;--glass:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.06);--accent:#10a37f;--accent2:#1ed8a5;--accent-glow:rgba(16,163,127,0.25);--text:#ececec;--text-dim:#8e8ea0;--text-muted:#6e6e80;--user-bg:#2a2a2a;--bot-bg:transparent;--hover:rgba(255,255,255,0.05)}
 html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color:var(--text);overflow:hidden}
 
-/* Animated gradient bg */
-.bg-gradient{position:fixed;inset:0;z-index:0;background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3),var(--bg4),var(--bg2),var(--bg1));background-size:400% 400%;animation:gradShift 20s ease infinite}
-@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+/* ─── INTRO SCREEN ─── */
+.intro-screen{position:fixed;inset:0;z-index:1000;background:var(--bg1);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.intro-screen.fade-out{opacity:0;transform:scale(1.05);pointer-events:none}
+.intro-logo{position:relative;margin-bottom:40px}
+.intro-ring{width:120px;height:120px;border-radius:50%;border:2px solid transparent;border-top-color:var(--accent);border-right-color:var(--accent2);animation:introSpin 1.5s cubic-bezier(.4,0,.2,1) forwards;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.intro-ring-2{width:140px;height:140px;border-radius:50%;border:1px solid transparent;border-bottom-color:rgba(16,163,127,0.3);animation:introSpin2 2s cubic-bezier(.4,0,.2,1) forwards;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+@keyframes introSpin{0%{transform:translate(-50%,-50%) rotate(0deg) scale(0.5);opacity:0}50%{opacity:1}100%{transform:translate(-50%,-50%) rotate(360deg) scale(1);opacity:1}}
+@keyframes introSpin2{0%{transform:translate(-50%,-50%) rotate(0deg) scale(0.3);opacity:0}60%{opacity:0.5}100%{transform:translate(-50%,-50%) rotate(-360deg) scale(1);opacity:0.5}}
+.intro-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:#fff;animation:introFadeScale .8s .3s cubic-bezier(.4,0,.2,1) both;position:relative;z-index:1;box-shadow:0 0 60px var(--accent-glow)}
+@keyframes introFadeScale{from{opacity:0;transform:scale(0.6)}to{opacity:1;transform:scale(1)}}
+.intro-text{text-align:center;animation:introTextUp .7s .6s cubic-bezier(.4,0,.2,1) both}
+@keyframes introTextUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.intro-name{font-size:2rem;font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-0.5px}
+.intro-title{font-size:.95rem;color:var(--text-dim);line-height:1.6;margin-bottom:32px}
+.intro-tagline{font-size:.8rem;color:var(--text-muted);animation:introPulse 2s 1.2s ease-in-out infinite;letter-spacing:1px;text-transform:uppercase}
+@keyframes introPulse{0%,100%{opacity:.5}50%{opacity:1}}
+.intro-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.intro-particle{position:absolute;width:2px;height:2px;background:var(--accent);border-radius:50%;animation:introFloat linear infinite}
+@keyframes introFloat{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1.5);opacity:0}}
 
-/* Particles */
-.particles{position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none}
-.particle{position:absolute;width:2px;height:2px;background:rgba(167,139,250,0.4);border-radius:50%;animation:float linear infinite}
-@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+/* ─── MAIN APP (hidden initially) ─── */
+.app-wrapper{opacity:0;transform:translateY(20px);transition:opacity .8s .1s cubic-bezier(.4,0,.2,1),transform .8s .1s cubic-bezier(.4,0,.2,1);height:100vh}
+.app-wrapper.visible{opacity:1;transform:translateY(0)}
 
 /* Layout */
 .app{display:flex;height:100vh;position:relative;z-index:2}
-.sidebar{width:260px;background:rgba(10,10,15,0.8);backdrop-filter:blur(20px);border-right:1px solid var(--glass-border);display:flex;flex-direction:column;padding:24px 16px;flex-shrink:0}
-.sidebar-name{font-size:1.25rem;font-weight:700;text-align:center;margin-bottom:4px;background:linear-gradient(135deg,#a78bfa,#7c3aed,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 40px rgba(124,58,237,0.3)}
-.sidebar-handle{text-align:center;color:var(--text-dim);font-size:.8rem;margin-bottom:6px}
-.sidebar-title{text-align:center;color:var(--text-dim);font-size:.7rem;line-height:1.4;margin-bottom:20px;padding:0 8px}
-.sidebar-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}
-.sidebar-links a{color:var(--text-dim);font-size:1.1rem;transition:all .3s;text-decoration:none}
-.sidebar-links a:hover{color:var(--accent2);text-shadow:0 0 12px rgba(167,139,250,0.5);transform:scale(1.2)}
-.sidebar-divider{height:1px;background:var(--glass-border);margin:12px 0}
-.sidebar-section{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-dim);margin:12px 0 8px;padding-left:4px}
-.sidebar-item{font-size:.78rem;color:var(--text-dim);padding:8px 12px;border-radius:8px;cursor:pointer;transition:all .2s;margin-bottom:2px}
-.sidebar-item:hover{background:var(--glass);color:var(--text)}
-.sidebar-footer{margin-top:auto;text-align:center;font-size:.65rem;color:rgba(148,163,184,0.4)}
+.sidebar{width:260px;background:var(--bg2);border-right:1px solid var(--glass-border);display:flex;flex-direction:column;padding:20px 12px;flex-shrink:0;transition:all .3s}
+.sidebar-brand{display:flex;align-items:center;gap:10px;padding:8px 12px;margin-bottom:16px}
+.sidebar-brand-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;flex-shrink:0}
+.sidebar-brand-text{font-size:.85rem;font-weight:600;color:var(--text)}
+.sidebar-new-chat{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--glass-border);border-radius:10px;color:var(--text);font-size:.82rem;cursor:pointer;transition:all .2s;margin-bottom:20px;background:none}
+.sidebar-new-chat:hover{background:var(--hover);border-color:rgba(255,255,255,0.12)}
+.sidebar-new-chat i{font-size:.75rem;color:var(--text-dim)}
+.sidebar-divider{height:1px;background:var(--glass-border);margin:8px 0}
+.sidebar-section{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin:16px 0 8px;padding-left:12px}
+.sidebar-item{font-size:.82rem;color:var(--text-dim);padding:10px 12px;border-radius:10px;cursor:pointer;transition:all .15s;margin-bottom:1px;display:flex;align-items:center;gap:8px}
+.sidebar-item:hover{background:var(--hover);color:var(--text)}
+.sidebar-item .item-icon{font-size:.9rem;width:20px;text-align:center}
+.sidebar-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 12px;margin-top:8px}
+.sidebar-links a{color:var(--text-muted);font-size:.95rem;transition:all .2s;text-decoration:none;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px}
+.sidebar-links a:hover{color:var(--accent2);background:var(--hover)}
+.sidebar-footer{margin-top:auto;padding:12px;border-top:1px solid var(--glass-border);text-align:center;font-size:.65rem;color:var(--text-muted)}
 
 /* Main chat area */
-.chat-area{flex:1;display:flex;flex-direction:column;min-width:0}
-.chat-header{padding:16px 24px;background:rgba(10,10,15,0.6);backdrop-filter:blur(16px);border-bottom:1px solid var(--glass-border);display:none}
-.chat-header-name{font-weight:600;font-size:1rem}
+.chat-area{flex:1;display:flex;flex-direction:column;min-width:0;background:var(--bg1)}
+.chat-header{padding:12px 24px;background:var(--bg1);border-bottom:1px solid var(--glass-border);display:flex;align-items:center;justify-content:space-between}
+.chat-header-left{display:flex;align-items:center;gap:8px}
+.chat-header-title{font-weight:600;font-size:.9rem;color:var(--text)}
+.chat-header-model{font-size:.7rem;color:var(--text-muted);background:var(--glass);padding:3px 10px;border-radius:6px;border:1px solid var(--glass-border)}
 
-.messages{flex:1;overflow-y:auto;padding:24px;scroll-behavior:smooth}
+.messages{flex:1;overflow-y:auto;scroll-behavior:smooth;padding-bottom:16px}
 .messages::-webkit-scrollbar{width:6px}
 .messages::-webkit-scrollbar-track{background:transparent}
-.messages::-webkit-scrollbar-thumb{background:rgba(124,58,237,0.3);border-radius:3px}
+.messages::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:3px}
+.messages::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.14)}
 
-.msg{display:flex;gap:12px;margin-bottom:20px;animation:msgIn .4s ease both;max-width:800px}
-.msg.user{flex-direction:row-reverse;margin-left:auto}
-@keyframes msgIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.msg{padding:24px 0;animation:msgIn .4s ease both}
+.msg-inner{max-width:768px;margin:0 auto;padding:0 24px;display:flex;gap:16px}
+.msg.user{background:var(--bg2)}
+.msg.bot{background:var(--bg1)}
+@keyframes msgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-.avatar{width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
-.avatar.bot{background:linear-gradient(135deg,#7c3aed,#3b82f6);box-shadow:0 0 20px rgba(124,58,237,0.4);color:#fff}
-.avatar.user{background:rgba(124,58,237,0.2);color:var(--accent2)}
+.avatar{width:32px;height:32px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;margin-top:2px}
+.avatar.bot{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 2px 12px var(--accent-glow)}
+.avatar.user{background:var(--surface);color:var(--text-dim);border:1px solid var(--glass-border)}
 
-.bubble{padding:14px 18px;border-radius:16px;font-size:.9rem;line-height:1.65;max-width:600px;position:relative}
-.msg.bot .bubble{background:var(--bot-bg);backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-top-left-radius:4px}
-.msg.user .bubble{background:var(--user-bg);backdrop-filter:blur(12px);border:1px solid rgba(124,58,237,0.15);border-top-right-radius:4px}
-.bubble ul{margin:8px 0 4px 18px;list-style:none}
-.bubble ul li{padding:3px 0;position:relative}
-.bubble ul li::before{content:'▸';position:absolute;left:-16px;color:var(--accent2)}
-.bubble a{color:var(--accent2);text-decoration:none;transition:color .2s}
-.bubble a:hover{color:#c4b5fd;text-decoration:underline}
-.bubble strong{color:#e0e7ff}
+.bubble{font-size:.92rem;line-height:1.75;flex:1;min-width:0;color:var(--text)}
+.bubble ul{margin:10px 0 6px 0;list-style:none;padding:0}
+.bubble ul li{padding:6px 0 6px 20px;position:relative;color:var(--text-dim)}
+.bubble ul li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.bubble a{color:var(--accent2);text-decoration:none;transition:all .2s;border-bottom:1px solid transparent}
+.bubble a:hover{border-bottom-color:var(--accent2)}
+.bubble strong{color:var(--text);font-weight:600}
 
-/* Quick actions */
-.quick-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.quick-btn{background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);color:var(--accent2);padding:8px 16px;border-radius:20px;font-size:.8rem;cursor:pointer;transition:all .3s;font-family:inherit}
-.quick-btn:hover{background:rgba(124,58,237,0.25);box-shadow:0 0 16px rgba(124,58,237,0.3);transform:translateY(-1px)}
+/* Quick suggestion cards */
+.quick-actions{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:16px}
+.quick-btn{background:var(--bg2);border:1px solid var(--glass-border);color:var(--text-dim);padding:12px 16px;border-radius:12px;font-size:.8rem;cursor:pointer;transition:all .2s;font-family:inherit;text-align:left;line-height:1.4}
+.quick-btn:hover{background:var(--surface);color:var(--text);border-color:rgba(255,255,255,0.12);transform:translateY(-1px)}
 
 /* Typing indicator */
-.typing{display:flex;gap:4px;padding:8px 0}
-.typing span{width:8px;height:8px;background:var(--accent2);border-radius:50%;animation:bounce 1.4s infinite;opacity:.4}
-.typing span:nth-child(2){animation-delay:.2s}
-.typing span:nth-child(3){animation-delay:.4s}
-@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-10px);opacity:1}}
+.typing{display:flex;gap:5px;padding:4px 0;align-items:center}
+.typing span{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:typeBounce 1.4s infinite;opacity:.35}
+.typing span:nth-child(2){animation-delay:.15s}
+.typing span:nth-child(3){animation-delay:.3s}
+@keyframes typeBounce{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-8px);opacity:1}}
 
 /* Input area */
-.input-area{padding:16px 24px 24px;background:rgba(10,10,15,0.6);backdrop-filter:blur(16px);border-top:1px solid var(--glass-border)}
-.input-wrap{max-width:800px;margin:0 auto;display:flex;gap:12px;align-items:center;background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:4px 4px 4px 18px;transition:all .3s}
-.input-wrap:focus-within{border-color:rgba(124,58,237,0.4);box-shadow:0 0 24px rgba(124,58,237,0.15)}
-#userInput{flex:1;background:none;border:none;outline:none;color:var(--text);font-size:.9rem;font-family:inherit;padding:10px 0}
-#userInput::placeholder{color:var(--text-dim)}
-.send-btn{width:40px;height:40px;border-radius:12px;border:none;background:linear-gradient(135deg,#7c3aed,#3b82f6);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0}
-.send-btn:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(124,58,237,0.4)}
+.input-area{padding:0 24px 24px;background:var(--bg1)}
+.input-wrap{max-width:768px;margin:0 auto;display:flex;gap:0;align-items:flex-end;background:var(--bg2);border:1px solid var(--glass-border);border-radius:16px;padding:4px;transition:all .3s;position:relative}
+.input-wrap:focus-within{border-color:rgba(16,163,127,0.4);box-shadow:0 0 0 1px rgba(16,163,127,0.15)}
+#userInput{flex:1;background:none;border:none;outline:none;color:var(--text);font-size:.9rem;font-family:inherit;padding:12px 16px;resize:none;min-height:24px;max-height:120px}
+#userInput::placeholder{color:var(--text-muted)}
+.send-btn{width:36px;height:36px;border-radius:10px;border:none;background:var(--accent);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;margin:2px}
+.send-btn:hover{background:var(--accent2);box-shadow:0 2px 12px var(--accent-glow)}
+.send-btn:disabled{opacity:.3;cursor:default}
+.input-footer{text-align:center;margin-top:10px;font-size:.68rem;color:var(--text-muted)}
 
 /* Mobile */
-.mobile-header{display:none;padding:14px 16px;background:rgba(10,10,15,0.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--glass-border);align-items:center;gap:12px}
-.mobile-header .sidebar-name{margin:0;font-size:1.1rem}
-.menu-btn{background:none;border:none;color:var(--text);font-size:1.2rem;cursor:pointer}
+.mobile-header{display:none;padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--glass-border);align-items:center;gap:12px}
+.mobile-header .sidebar-brand-text{font-size:.95rem}
+.menu-btn{background:none;border:none;color:var(--text);font-size:1.1rem;cursor:pointer;padding:4px}
 
 @media(max-width:768px){
   .sidebar{position:fixed;left:-280px;top:0;bottom:0;z-index:100;transition:left .3s ease;width:260px}
   .sidebar.open{left:0}
-  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99}
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99;backdrop-filter:blur(4px)}
   .sidebar-overlay.open{display:block}
   .mobile-header{display:flex}
-  .messages{padding:16px}
-  .input-area{padding:12px 16px 16px}
+  .chat-header{display:none}
+  .msg-inner{padding:0 16px}
+  .input-area{padding:0 16px 16px}
+  .intro-name{font-size:1.6rem}
+  .intro-title{font-size:.85rem;padding:0 20px}
+  .quick-actions{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
-<div class="bg-gradient"></div>
-<div class="particles" id="particles"></div>
+
+<!-- ─── ANIMATED INTRO SCREEN ─── -->
+<div class="intro-screen" id="introScreen">
+  <div class="intro-particles" id="introParticles"></div>
+  <div class="intro-logo">
+    <div class="intro-ring"></div>
+    <div class="intro-ring-2"></div>
+    <div class="intro-avatar">JW</div>
+  </div>
+  <div class="intro-text">
+    <div class="intro-name">Joel Wembo</div>
+    <div class="intro-title">Enterprise AI Agent Developer<br>Cloud Solutions &amp; Data Center Architect</div>
+    <div class="intro-tagline">Initializing AI Assistant...</div>
+  </div>
+</div>
+
+<!-- ─── MAIN APP ─── -->
+<div class="app-wrapper" id="appWrapper">
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
 <div class="app">
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar-name">Joel Wembo</div>
-    <div class="sidebar-handle">@prodxcloud</div>
-    <div class="sidebar-title">Enterprise AI Agent Developer<br>Cloud Solutions Architect<br>Data Center Architect</div>
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon">JW</div>
+      <div class="sidebar-brand-text">Joel Wembo AI</div>
+    </div>
+    <div class="sidebar-new-chat" onclick="clearChat()">
+      <i class="fas fa-plus"></i> New Chat
+    </div>
+    <div class="sidebar-section">Quick Topics</div>
+    <div class="sidebar-item" onclick="sendQuery('Tell me about Joel')"><span class="item-icon">👤</span> About Joel</div>
+    <div class="sidebar-item" onclick="sendQuery('Skills')"><span class="item-icon">🛠️</span> Skills & Tech</div>
+    <div class="sidebar-item" onclick="sendQuery('Projects')"><span class="item-icon">🚀</span> Projects</div>
+    <div class="sidebar-item" onclick="sendQuery('Certifications')"><span class="item-icon">🏅</span> Certifications</div>
+    <div class="sidebar-item" onclick="sendQuery('Contact')"><span class="item-icon">📬</span> Contact</div>
+    <div class="sidebar-item" onclick="sendQuery('Resume')"><span class="item-icon">📄</span> Resume</div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Connect</div>
     <div class="sidebar-links">
       <a href="https://www.linkedin.com/in/joelwembo/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/joelwembo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
@@ -118,31 +175,30 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color
       <a href="https://www.facebook.com/joel.o.wembo.1/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
       <a href="https://prodxcloud.com" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a>
     </div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Quick Topics</div>
-    <div class="sidebar-item" onclick="sendQuery('Tell me about Joel')">👤 About Joel</div>
-    <div class="sidebar-item" onclick="sendQuery('Skills')">🛠️ Skills & Tech</div>
-    <div class="sidebar-item" onclick="sendQuery('Projects')">🚀 Projects</div>
-    <div class="sidebar-item" onclick="sendQuery('Certifications')">🏅 Certifications</div>
-    <div class="sidebar-item" onclick="sendQuery('Contact')">📬 Contact</div>
-    <div class="sidebar-item" onclick="sendQuery('Resume')">📄 Resume</div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-footer">🌍 Available Worldwide<br>© 2024 Joel Wembo</div>
+    <div class="sidebar-footer">🌍 Available Worldwide &middot; &copy; 2024 Joel Wembo</div>
   </aside>
 
   <main class="chat-area">
     <div class="mobile-header">
       <button class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
-      <div class="sidebar-name">Joel Wembo</div>
+      <div class="sidebar-brand-text">Joel Wembo AI</div>
+    </div>
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-header-title">Joel Wembo AI</div>
+      </div>
+      <div class="chat-header-model">Portfolio Assistant</div>
     </div>
     <div class="messages" id="messages"></div>
     <div class="input-area">
       <div class="input-wrap">
-        <input type="text" id="userInput" placeholder="Ask about Joel's skills, projects, experience..." autocomplete="off">
-        <button class="send-btn" onclick="handleSend()"><i class="fas fa-paper-plane"></i></button>
+        <input type="text" id="userInput" placeholder="Message Joel's AI assistant..." autocomplete="off">
+        <button class="send-btn" onclick="handleSend()" id="sendBtn"><i class="fas fa-arrow-up"></i></button>
       </div>
+      <div class="input-footer">Joel's AI assistant can share info about skills, projects &amp; experience</div>
     </div>
   </main>
+</div>
 </div>
 
 <script>
@@ -192,31 +248,48 @@ const joel = {
   }
 };
 
-const msgBox = document.getElementById('messages');
-const input = document.getElementById('userInput');
-
-// Particles
+/* ── Intro animation ── */
 (function(){
-  const c = document.getElementById('particles');
-  for(let i=0;i<50;i++){
+  const c = document.getElementById('introParticles');
+  for(let i=0;i<30;i++){
     const p = document.createElement('div');
-    p.className='particle';
+    p.className='intro-particle';
     p.style.left = Math.random()*100+'%';
-    p.style.animationDuration = (8+Math.random()*12)+'s';
-    p.style.animationDelay = Math.random()*10+'s';
-    p.style.width = p.style.height = (1+Math.random()*2)+'px';
+    p.style.animationDuration = (6+Math.random()*10)+'s';
+    p.style.animationDelay = Math.random()*4+'s';
+    p.style.width = p.style.height = (1+Math.random()*3)+'px';
     c.appendChild(p);
   }
+  setTimeout(()=>{
+    const intro = document.getElementById('introScreen');
+    const app = document.getElementById('appWrapper');
+    intro.classList.add('fade-out');
+    app.classList.add('visible');
+    setTimeout(()=>{
+      intro.style.display='none';
+      showWelcome();
+    },800);
+  },2800);
 })();
+
+const msgBox = document.getElementById('messages');
+const input = document.getElementById('userInput');
 
 function toggleSidebar(){
   document.getElementById('sidebar').classList.toggle('open');
   document.getElementById('sidebarOverlay').classList.toggle('open');
 }
 
+function clearChat(){
+  msgBox.innerHTML='';
+  showWelcome();
+}
+
 function addMsg(html, type, showQuick){
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + type;
+  const inner = document.createElement('div');
+  inner.className = 'msg-inner';
   const av = document.createElement('div');
   av.className = 'avatar ' + type;
   av.textContent = type==='bot' ? 'JW' : '🧑';
@@ -226,17 +299,24 @@ function addMsg(html, type, showQuick){
   if(showQuick){
     const qa = document.createElement('div');
     qa.className = 'quick-actions';
-    ['Skills','Projects','Certifications','Contact','Resume'].forEach(t=>{
+    [
+      {t:'Skills & Tech',icon:'🛠️'},
+      {t:'Projects',icon:'🚀'},
+      {t:'Certifications',icon:'🏅'},
+      {t:'Contact Info',icon:'📬'},
+      {t:'Resume',icon:'📄'}
+    ].forEach(item=>{
       const b = document.createElement('button');
       b.className='quick-btn';
-      b.textContent=t;
-      b.onclick=()=>sendQuery(t);
+      b.textContent=item.icon+' '+item.t;
+      b.onclick=()=>sendQuery(item.t.replace(' Info',''));
       qa.appendChild(b);
     });
     bub.appendChild(qa);
   }
-  wrap.appendChild(av);
-  wrap.appendChild(bub);
+  inner.appendChild(av);
+  inner.appendChild(bub);
+  wrap.appendChild(inner);
   msgBox.appendChild(wrap);
   msgBox.scrollTop = msgBox.scrollHeight;
   return wrap;
@@ -246,14 +326,17 @@ function showTyping(){
   const wrap = document.createElement('div');
   wrap.className='msg bot';
   wrap.id='typing-ind';
+  const inner = document.createElement('div');
+  inner.className='msg-inner';
   const av = document.createElement('div');
   av.className='avatar bot';
   av.textContent='JW';
   const bub = document.createElement('div');
   bub.className='bubble';
   bub.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
-  wrap.appendChild(av);
-  wrap.appendChild(bub);
+  inner.appendChild(av);
+  inner.appendChild(bub);
+  wrap.appendChild(inner);
   msgBox.appendChild(wrap);
   msgBox.scrollTop = msgBox.scrollHeight;
 }
@@ -310,10 +393,9 @@ input.addEventListener('keydown', e=>{
   if(e.key==='Enter') handleSend();
 });
 
-// Welcome
-setTimeout(()=>{
-  addMsg("Hey! I'm Joel's AI assistant. Ask me anything about his skills, projects, experience, or how to get in touch. 🚀", 'bot', true);
-}, 500);
+function showWelcome(){
+  addMsg("Hi! I'm Joel's AI assistant. Ask me anything about his skills, projects, experience, or how to get in touch. 🚀", 'bot', true);
+}
 </script>
 </body>
 </html>
