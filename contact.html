@@ -175,6 +175,7 @@
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/validator.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/chat-assets.js"></script>
     
     <!-- AI Chatbot Modal -->
     <div class="chatbot-overlay" id="chatbotOverlay">
@@ -356,14 +357,22 @@
         const messagesContainer = document.getElementById('chatMessages');
         const messageDiv = document.createElement('div');
         messageDiv.className = 'message-ai chat-bubble ai';
-        let responseHTML = '<div class="ai-label"><i class="fas fa-sparkles"></i> AI Agent</div><div style="color: #fff; font-size: 14px; line-height: 1.6; margin-bottom: 12px;">I understand you want to deploy on AWS EKS. Let me help you with that!</div>';
-        if (userQuery.toLowerCase().includes('deploy') || userQuery.toLowerCase().includes('eks') || userQuery.toLowerCase().includes('kubernetes') || userQuery.toLowerCase().includes('aws') || userQuery.toLowerCase().includes('full-stack')) {
+        var matchedAssets = findMatchingAssets(userQuery);
+        var isDeployQuery = userQuery.toLowerCase().includes('deploy') || userQuery.toLowerCase().includes('eks') || userQuery.toLowerCase().includes('kubernetes') || userQuery.toLowerCase().includes('aws') || userQuery.toLowerCase().includes('full-stack');
+        var responseText = isDeployQuery
+          ? 'I understand you want to deploy on AWS EKS. Let me help you with that!'
+          : 'Here is what I found related to your query.';
+        var responseHTML = '<div class="ai-label"><i class="fas fa-sparkles"></i> AI Agent</div><div style="color: #fff; font-size: 14px; line-height: 1.6; margin-bottom: 12px;">' + responseText + '</div>';
+        if (matchedAssets.length > 0) {
+          responseHTML += buildImageGalleryHTML(matchedAssets);
+        }
+        if (isDeployQuery) {
           responseHTML += createDeploymentSimulation();
         }
         messageDiv.innerHTML = responseHTML;
         messagesContainer.appendChild(messageDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        if (userQuery.toLowerCase().includes('deploy') || userQuery.toLowerCase().includes('eks') || userQuery.toLowerCase().includes('kubernetes') || userQuery.toLowerCase().includes('aws') || userQuery.toLowerCase().includes('full-stack')) {
+        if (isDeployQuery) {
           animateDeploymentSteps(messageDiv);
         }
       }
