@@ -14,10 +14,130 @@
     <link rel="icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="favicon.png" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
       img.rounded-corners {
         border-radius: 50%;
-      } 
+      }
+
+      /* Tech Stack Cards */
+      .tech-stack-section {
+        padding: 80px 0;
+        background: #0f172a;
+      }
+      .tech-stack-section .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      .tech-stack-section .section-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 50px;
+      }
+      .tech-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .tech-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      }
+      .tech-card .card-icon {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+      .tech-card h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      .tech-card .tech-item {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        color: #94a3b8;
+        line-height: 1.8;
+        margin-bottom: 6px;
+      }
+      .tech-card .tech-item strong {
+        color: #818cf8;
+        font-weight: 600;
+      }
+
+      /* Key Projects Section */
+      .key-projects-section {
+        padding: 80px 0;
+        background: #0B1120;
+      }
+      .key-projects-section .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      .key-projects-section .section-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 50px;
+      }
+      .project-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      }
+      .project-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .project-card .card-body {
+        padding: 24px;
+      }
+      .project-card .card-body h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      .project-card .card-body p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        color: #94a3b8;
+        line-height: 1.7;
+      }
+      .project-card .card-tags {
+        padding: 0 24px 20px;
+      }
+      .project-card .card-tags span {
+        display: inline-block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        color: #818cf8;
+        background: rgba(129,140,248,0.1);
+        border: 1px solid rgba(129,140,248,0.2);
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin: 0 6px 6px 0;
+      }
     </style>
   </head>
   <body>
@@ -132,6 +252,122 @@
           </div>
         </div>
       </div>
+
+        <!-- Tech Stack & Core Competencies -->
+        <div class="tech-stack-section">
+          <div class="container">
+            <div class="text-center">
+              <h1 class="section-title wow fadeInDown" data-wow-delay=".1s">🛠 Tech Stack &amp; Core Competencies</h1>
+              <p class="section-subtitle wow fadeInDown" data-wow-delay=".2s">Bridging robust infrastructure and intelligent automation</p>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="tech-card wow fadeInUp" data-wow-delay=".2s">
+                  <div class="card-icon">🤖</div>
+                  <h4>Agentic AI &amp; Orchestration</h4>
+                  <div class="tech-item"><strong>Orchestration:</strong> LangChain, LangGraph, Temporal.io SDK (Durable Execution)</div>
+                  <div class="tech-item"><strong>Models:</strong> Fine-tuning Mistral, Hugging Face, OpenAI/Claude API Integration</div>
+                  <div class="tech-item"><strong>Vector Ops:</strong> FAISS, ChromaDB, Pinecone, RAG Optimization</div>
+                  <div class="tech-item"><strong>Agent Patterns:</strong> Tool-calling, Multi-agent Collaboration, Self-correction Loops</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tech-card wow fadeInUp" data-wow-delay=".3s">
+                  <div class="card-icon">☁️</div>
+                  <h4>Cloud &amp; Data Center</h4>
+                  <div class="tech-item"><strong>Infrastructure:</strong> Kubernetes (EKS, GKE, AKS), Terraform, AWS CDK, Docker</div>
+                  <div class="tech-item"><strong>Architecture:</strong> High-Availability Data Center Design, Disaster Recovery, Hybrid Cloud</div>
+                  <div class="tech-item"><strong>Managed Services:</strong> AWS Lambda, Amazon Aurora, Azure AD, Google Cloud Run</div>
+                  <div class="tech-item"><strong>Monitoring:</strong> OpenTelemetry, Prometheus, Grafana</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tech-card wow fadeInUp" data-wow-delay=".4s">
+                  <div class="card-icon">💻</div>
+                  <h4>Backend &amp; Development</h4>
+                  <div class="tech-item"><strong>Languages:</strong> Python (FastAPI, Django, PyTorch), Go, TypeScript</div>
+                  <div class="tech-item"><strong>Database:</strong> PostgreSQL, Redis, MongoDB, Vector Databases</div>
+                  <div class="tech-item"><strong>DevOps:</strong> GitHub Actions, Jenkins, ArgoCD, CI/CD Automation</div>
+                  <div class="tech-item"><strong>Frontend:</strong> React.js, Next.js, Node.js</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Projects & Research -->
+        <div class="key-projects-section">
+          <div class="container">
+            <div class="text-center">
+              <h1 class="section-title wow fadeInDown" data-wow-delay=".1s">🚀 Key Projects &amp; Research</h1>
+              <p class="section-subtitle wow fadeInDown" data-wow-delay=".2s">Building resilient AI systems and scalable cloud architectures</p>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="project-card wow fadeInUp" data-wow-delay=".2s">
+                  <img src="assets/images/image3.jpg" alt="Durable Agentic Workflows" />
+                  <div class="card-body">
+                    <h4>🧠 Durable Agentic Workflows</h4>
+                    <p>Developing resilient AI agents using Temporal.io to manage long-running stateful executions. By combining LangChain with Temporal, complex AI reasoning tasks are fault-tolerant and human-in-the-loop ready.</p>
+                  </div>
+                  <div class="card-tags">
+                    <span>LangChain</span>
+                    <span>Temporal.io</span>
+                    <span>AI Agents</span>
+                    <span>Durable Execution</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="project-card wow fadeInUp" data-wow-delay=".3s">
+                  <img src="assets/images/image2.png" alt="Fine-Tuned RAG Resume Parser" />
+                  <div class="card-body">
+                    <h4>📄 Fine-Tuned RAG Resume Parser</h4>
+                    <p>Building a high-precision parser leveraging PyTorch and Hugging Face (Mistral). This project focuses on hybrid search and cross-encoder re-ranking to extract structured data from unstructured career documents.</p>
+                  </div>
+                  <div class="card-tags">
+                    <span>PyTorch</span>
+                    <span>Hugging Face</span>
+                    <span>Mistral</span>
+                    <span>RAG</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="project-card wow fadeInUp" data-wow-delay=".4s">
+                  <img src="assets/images/image1.jpg" alt="Prodxcloud Ecosystem" />
+                  <div class="card-body">
+                    <h4>🏗️ Prodxcloud Ecosystem</h4>
+                    <p>Leading the architecture for multi-tenant SaaS platforms, focusing on automated provisioning and scaling ML services for high-traffic applications across multi-cloud environments.</p>
+                  </div>
+                  <div class="card-tags">
+                    <span>Multi-tenant SaaS</span>
+                    <span>Kubernetes</span>
+                    <span>ML Services</span>
+                    <span>AWS</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="project-card wow fadeInUp" data-wow-delay=".5s">
+                  <img src="assets/images/image4.jpg" alt="Cloud & AI Architecture" />
+                  <div class="card-body">
+                    <h4>🌐 Cloud &amp; AI Architecture</h4>
+                    <p>Designing intelligent, scalable architectures that transform business operations. Specializing in embedding AI Agents as a Service (AaaS) into cloud infrastructures to drive automation and intelligence.</p>
+                  </div>
+                  <div class="card-tags">
+                    <span>AaaS</span>
+                    <span>Cloud Architecture</span>
+                    <span>Terraform</span>
+                    <span>Docker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="pitch text-center">
           <div class="container">
