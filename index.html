@@ -205,22 +205,56 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color
 const joel = {
   name: "Joel Otepa Wembo",
   handle: "@prodxcloud",
-  title: "Enterprise AI Agent Developer | Cloud Solutions Architect | Data Center Architect",
+  title: "Cloud Architect | Agentic AI Engineer | Data Center Architect at Prodxcloud",
   location: "Available Worldwide",
-  bio: "Certified Cloud Solutions Architect, Data Center Architect, and AI Agent Developer. I design and deliver high-availability, agentic architectures powering SaaS, PaaS, and enterprise data centers. My work bridges Cloud, AI/ML, Data Center, Cisco Networking, and Knowledge Engineering.",
+  bio: "Hi there, I'm Joel Wembo 👋 — Cloud Architect, Agentic AI Engineer, and Data Center Architect at Prodxcloud. I specialize in bridging the gap between robust infrastructure and intelligent automation. My work focuses on building Durable AI Agents and scaling mission-critical workloads across multi-cloud environments.",
   skills: [
     "AI Agents as a Service (AaaS)",
     "Machine Learning & Deep Learning (PyTorch, TensorFlow)",
     "NLP, Computer Vision, Generative AI",
-    "LangChain, AWS Bedrock AgentCore, Google AgentSpace",
+    "LangChain, LangGraph, Temporal.io SDK (Durable Execution)",
+    "Fine-tuning Mistral, Hugging Face, OpenAI/Claude API",
+    "Vector Ops: FAISS, ChromaDB, Pinecone, RAG Optimization",
+    "Agent Patterns: Tool-calling, Multi-agent Collaboration, Self-correction Loops",
     "Data Center Architecture & Cisco Networking",
     "Cloud Architecture (AWS, Azure, GCP)",
+    "Infrastructure: Kubernetes (EKS, GKE, AKS), Terraform, AWS CDK, Docker",
+    "High-Availability Data Center Design, Disaster Recovery, Hybrid Cloud",
+    "Managed Services: AWS Lambda, Amazon Aurora, Azure AD, Google Cloud Run",
+    "Monitoring: OpenTelemetry, Prometheus, Grafana",
+    "Languages: Python (FastAPI, Django, PyTorch), Go, TypeScript",
+    "Database: PostgreSQL, Redis, MongoDB, Vector Databases",
     "Multi-Tenant SaaS & PaaS Platforms",
     "MLOps (MLflow, LangSmith, OpenTelemetry)",
-    "Kubernetes, Docker, Terraform, CI/CD",
-    "Vector Databases (FAISS, ChromaDB, pgvector)",
-    "React.js, Node.js, Python, Go"
+    "CI/CD Automation & DevOps"
   ],
+  techStack: {
+    agenticAI: {
+      title: "🤖 Agentic AI & Orchestration",
+      items: [
+        "<strong>Orchestration:</strong> LangChain, LangGraph, Temporal.io SDK (Durable Execution)",
+        "<strong>Models:</strong> Fine-tuning Mistral, Hugging Face, OpenAI/Claude API Integration",
+        "<strong>Vector Ops:</strong> FAISS, ChromaDB, Pinecone, RAG Optimization",
+        "<strong>Agent Patterns:</strong> Tool-calling, Multi-agent Collaboration, Self-correction Loops"
+      ]
+    },
+    cloud: {
+      title: "☁️ Cloud & Data Center",
+      items: [
+        "<strong>Infrastructure:</strong> Kubernetes (EKS, GKE, AKS), Terraform, AWS CDK, Docker",
+        "<strong>Architecture:</strong> High-Availability Data Center Design, Disaster Recovery, Hybrid Cloud",
+        "<strong>Managed Services:</strong> AWS Lambda, Amazon Aurora, Azure AD, Google Cloud Run",
+        "<strong>Monitoring:</strong> OpenTelemetry, Prometheus, Grafana"
+      ]
+    },
+    backend: {
+      title: "💻 Backend & Development",
+      items: [
+        "<strong>Languages:</strong> Python (FastAPI, Django, PyTorch), Go, TypeScript",
+        "<strong>Database:</strong> PostgreSQL, Redis, MongoDB, Vector Databases"
+      ]
+    }
+  },
   certifications: [
     "AWS Certified Solutions Architect – Associate",
     "Telecommunications Senior Engineer",
@@ -229,11 +263,13 @@ const joel = {
     "LinkedIn Top Voice - AI/ML"
   ],
   projects: [
+    "🧠 <strong>Durable Agentic Workflows</strong> — Developing resilient AI agents using Temporal.io to manage long-running stateful executions. Combining LangChain with Temporal for fault-tolerant, human-in-the-loop AI reasoning.",
+    "📄 <strong>Fine-Tuned RAG Resume Parser</strong> — High-precision parser leveraging PyTorch and Hugging Face (Mistral) with hybrid search and cross-encoder re-ranking for structured data extraction.",
+    "🏗️ <strong>Prodxcloud Ecosystem</strong> — Leading multi-tenant SaaS platform architecture, focusing on automated provisioning and scaling ML services for high-traffic applications.",
     "End-to-End CI/CD DevOps with Jenkins, Docker, Kubernetes, ArgoCD, GitHub Actions, AWS EC2 and Terraform",
     "End-to-End CI/CD Pipeline for frontend to AWS CloudFront using Ansible, Jenkins and Terraform",
     "AWS EKS deployment using GitHub Actions, Docker and ArgoCD for React Applications",
     "Terraform & CloudFront, Route53 and S3 Bucket automation",
-    "Automating Django deployment to AWS EC2",
     "VaLLM - Sovereign AI for Cloud Operations (RAG + FAISS reasoning engine)",
     "Django Multi-tenant SaaS eCommerce with Kubernetes"
   ],
@@ -349,10 +385,15 @@ function removeTyping(){
 function getResponse(q){
   const l = q.toLowerCase();
   if(/skill|tech|stack|what can|expertise|know/.test(l)){
-    return `<strong>🛠️ Joel's Technical Skills</strong><ul>${joel.skills.map(s=>'<li>'+s+'</li>').join('')}</ul><p style="margin-top:8px;color:var(--text-dim);font-size:.82rem">Joel is constantly expanding his expertise across AI, Cloud, and Data Center domains.</p>`;
+    let html = `<strong>🛠️ Joel's Tech Stack & Core Competencies</strong>`;
+    Object.values(joel.techStack).forEach(cat => {
+      html += `<p style="margin:14px 0 6px;color:var(--text);font-weight:600;font-size:.88rem">${cat.title}</p><ul>${cat.items.map(i=>'<li>'+i+'</li>').join('')}</ul>`;
+    });
+    html += `<p style="margin-top:10px;color:var(--text-dim);font-size:.82rem">Joel is constantly expanding his expertise across AI, Cloud, and Data Center domains.</p>`;
+    return html;
   }
-  if(/project|work|portfolio|built|ship/.test(l)){
-    return `<strong>🚀 Featured Projects</strong><ul>${joel.projects.map(p=>'<li>'+p+'</li>').join('')}</ul><p style="margin-top:8px">See more on <a href="${joel.links.github}" target="_blank">GitHub</a> and <a href="${joel.links.medium}" target="_blank">Medium</a>.</p>`;
+  if(/project|work|portfolio|built|ship|research/.test(l)){
+    return `<strong>🚀 Key Projects & Research</strong><ul>${joel.projects.map(p=>'<li>'+p+'</li>').join('')}</ul><p style="margin-top:10px">See more on <a href="${joel.links.github}" target="_blank">GitHub</a> and <a href="${joel.links.medium}" target="_blank">Medium</a>.</p>`;
   }
   if(/cert|certification|qualified|credential/.test(l)){
     return `<strong>🏅 Certifications & Recognitions</strong><ul>${joel.certifications.map(c=>'<li>'+c+'</li>').join('')}</ul>`;
@@ -364,12 +405,12 @@ function getResponse(q){
     return `<strong>📄 Resume</strong><p style="margin:8px 0">Download Joel's resume to learn more about his experience and qualifications:</p><p><a href="${joel.links.resume}" target="_blank"><i class="fas fa-download"></i> Download Resume (PDF)</a></p>`;
   }
   if(/who|about|tell me|bio|joel|yourself/.test(l)){
-    return `<strong>👤 About ${joel.name}</strong><p style="margin:8px 0">${joel.bio}</p><p style="color:var(--text-dim);font-size:.85rem"><i class="fas fa-map-marker-alt"></i> ${joel.location} &nbsp;|&nbsp; <a href="${joel.links.portfolio}" target="_blank">${joel.handle}</a></p>`;
+    return `<strong>👤 About ${joel.name}</strong><p style="margin:8px 0">${joel.bio}</p><p style="margin:8px 0;color:var(--text-dim);font-size:.85rem">I specialize in building <strong>Durable AI Agents</strong> and scaling mission-critical workloads across multi-cloud environments. My work bridges Cloud, AI/ML, Data Center, Cisco Networking, and Knowledge Engineering.</p><p style="color:var(--text-dim);font-size:.85rem"><i class="fas fa-map-marker-alt"></i> ${joel.location} &nbsp;|&nbsp; <a href="${joel.links.portfolio}" target="_blank">${joel.handle}</a></p>`;
   }
   if(/^(hello|hi|hey|yo|sup|greet)/i.test(l)){
-    return `Hey there! 👋 Great to have you here. I'm Joel's AI assistant — I can tell you about his <strong>skills</strong>, <strong>projects</strong>, <strong>certifications</strong>, or help you <strong>get in touch</strong>. What interests you?`;
+    return `Hey there! 👋 Great to have you here. I'm Joel's AI assistant — I can tell you about his <strong>skills & tech stack</strong>, <strong>key projects & research</strong>, <strong>certifications</strong>, or help you <strong>get in touch</strong>. What interests you?`;
   }
-  return `I can tell you about Joel's <strong>skills</strong>, <strong>projects</strong>, <strong>certifications</strong>, or <strong>contact info</strong>. You can also download his <strong>resume</strong>. What would you like to know? 😊`;
+  return `I can tell you about Joel's <strong>tech stack</strong>, <strong>key projects & research</strong>, <strong>certifications</strong>, or <strong>contact info</strong>. You can also download his <strong>resume</strong>. What would you like to know? 😊`;
 }
 
 function sendQuery(text){
