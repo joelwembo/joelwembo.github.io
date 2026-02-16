@@ -3,7 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joel Wembo — AI Portfolio</title>
+<title>Joel Wembo — AI &amp; Cloud Solutions Architect | Agentic AI Engineer | Portfolio</title>
+<meta name="description" content="Joel Wembo — Enterprise AI Agent Developer, Cloud Solutions &amp; Data Center Architect. Specializing in Agentic AI, LangChain, Kubernetes, AWS, Terraform, and multi-cloud infrastructure. Explore projects, skills, and certifications.">
+<meta name="keywords" content="Joel Wembo, AI Agent Developer, Cloud Architect, Data Center Architect, Agentic AI, LangChain, LangGraph, Temporal.io, Kubernetes, AWS, Terraform, DevOps, MLOps, FastAPI, Django, Prodxcloud, RAG, FAISS, Generative AI, Multi-Cloud, SaaS">
+<meta name="author" content="Joel Otepa Wembo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://joelwembo.github.io/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joelwembo.github.io/">
+<meta property="og:title" content="Joel Wembo — AI &amp; Cloud Solutions Architect | Agentic AI Engineer">
+<meta property="og:description" content="Enterprise AI Agent Developer, Cloud Solutions &amp; Data Center Architect. Building Durable AI Agents and scaling mission-critical workloads across multi-cloud environments.">
+<meta property="og:image" content="https://joelwembo.github.io/mainapp.png">
+<meta property="og:site_name" content="Joel Wembo AI Portfolio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@joelwembo1">
+<meta name="twitter:creator" content="@joelwembo1">
+<meta name="twitter:title" content="Joel Wembo — AI &amp; Cloud Solutions Architect | Agentic AI Engineer">
+<meta name="twitter:description" content="Enterprise AI Agent Developer, Cloud Solutions &amp; Data Center Architect. Building Durable AI Agents and scaling mission-critical workloads.">
+<meta name="twitter:image" content="https://joelwembo.github.io/mainapp.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Joel Otepa Wembo",
+  "url": "https://joelwembo.github.io/",
+  "image": "https://joelwembo.github.io/mainapp.png",
+  "jobTitle": "Cloud Architect & Agentic AI Engineer",
+  "worksFor": { "@type": "Organization", "name": "Prodxcloud" },
+  "sameAs": [
+    "https://www.linkedin.com/in/joelwembo/",
+    "https://github.com/joelwembo",
+    "https://twitter.com/joelwembo1",
+    "https://joelotepawembo.medium.com/",
+    "https://prodxcloud.com"
+  ],
+  "knowsAbout": ["Agentic AI", "Cloud Architecture", "Data Center Architecture", "Kubernetes", "AWS", "Terraform", "LangChain", "LangGraph", "MLOps", "DevOps"]
+}
+</script>
+
+<link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
@@ -108,6 +152,44 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color
 .send-btn:disabled{opacity:.3;cursor:default}
 .input-footer{text-align:center;margin-top:10px;font-size:.68rem;color:var(--text-muted)}
 
+/* ─── Canvas Panel ─── */
+.canvas-panel{position:fixed;top:0;right:-480px;width:480px;height:100vh;background:var(--bg2);border-left:1px solid var(--glass-border);z-index:200;transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,0.4)}
+.canvas-panel.open{right:0}
+.canvas-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--glass-border);background:var(--bg2);flex-shrink:0}
+.canvas-header-left{display:flex;align-items:center;gap:10px}
+.canvas-header-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 2px 12px var(--accent-glow)}
+.canvas-header-title{font-weight:600;font-size:.92rem;color:var(--text)}
+.canvas-header-badge{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent2);background:rgba(16,163,127,0.12);padding:3px 8px;border-radius:6px;font-weight:600}
+.canvas-close{background:none;border:none;color:var(--text-dim);font-size:1rem;cursor:pointer;padding:6px;border-radius:8px;transition:all .2s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.canvas-close:hover{background:var(--hover);color:var(--text)}
+.canvas-body{flex:1;overflow-y:auto;padding:24px 20px;scroll-behavior:smooth}
+.canvas-body::-webkit-scrollbar{width:5px}
+.canvas-body::-webkit-scrollbar-track{background:transparent}
+.canvas-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:3px}
+.canvas-section{margin-bottom:28px;animation:canvasIn .5s ease both}
+@keyframes canvasIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.canvas-section-title{font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent2);margin-bottom:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.canvas-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:16px;margin-bottom:10px;transition:all .2s}
+.canvas-card:hover{background:var(--hover);border-color:rgba(255,255,255,0.1)}
+.canvas-card-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.canvas-card-desc{font-size:.8rem;color:var(--text-dim);line-height:1.7}
+.canvas-tag{display:inline-block;font-size:.68rem;background:rgba(16,163,127,0.1);color:var(--accent2);padding:3px 10px;border-radius:20px;margin:3px 3px 3px 0;border:1px solid rgba(16,163,127,0.15);font-weight:500}
+.canvas-tags{margin-top:10px;display:flex;flex-wrap:wrap}
+.canvas-stat{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--glass-border)}
+.canvas-stat:last-child{border-bottom:none}
+.canvas-stat-icon{width:36px;height:36px;border-radius:10px;background:var(--glass);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.canvas-stat-text{font-size:.82rem;color:var(--text)}
+.canvas-stat-sub{font-size:.72rem;color:var(--text-muted)}
+.canvas-intro{font-size:.84rem;color:var(--text-dim);line-height:1.8;margin-bottom:20px;padding:14px 16px;background:var(--glass);border-radius:12px;border:1px solid var(--glass-border)}
+.canvas-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:199;backdrop-filter:blur(3px)}
+.canvas-overlay.open{display:block}
+
+/* Sidebar canvas items */
+.sidebar-canvas-item{font-size:.82rem;color:var(--text-dim);padding:10px 12px;border-radius:10px;cursor:pointer;transition:all .15s;margin-bottom:1px;display:flex;align-items:center;gap:8px;position:relative}
+.sidebar-canvas-item:hover{background:var(--hover);color:var(--text)}
+.sidebar-canvas-item .item-icon{font-size:.9rem;width:20px;text-align:center}
+.sidebar-canvas-item .canvas-badge{margin-left:auto;font-size:.55rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
 /* Mobile */
 .mobile-header{display:none;padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--glass-border);align-items:center;gap:12px}
 .mobile-header .sidebar-brand-text{font-size:.95rem}
@@ -125,6 +207,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color
   .intro-name{font-size:1.6rem}
   .intro-title{font-size:.85rem;padding:0 20px}
   .quick-actions{grid-template-columns:1fr 1fr}
+  .canvas-panel{width:100%;right:-100%}
 }
 </style>
 </head>
@@ -158,6 +241,13 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color
     <div class="sidebar-new-chat" onclick="clearChat()">
       <i class="fas fa-plus"></i> New Chat
     </div>
+    <div class="sidebar-section">Explore</div>
+    <div class="sidebar-canvas-item" onclick="openCanvas('agenticIdeas')"><span class="item-icon">🧠</span> Agentic Ideas<span class="canvas-badge">Canvas</span></div>
+    <div class="sidebar-canvas-item" onclick="openCanvas('aiModels')"><span class="item-icon">🤖</span> AI Model Technologies<span class="canvas-badge">Canvas</span></div>
+    <div class="sidebar-canvas-item" onclick="openCanvas('preferredStack')"><span class="item-icon">⚡</span> My Preferred Stack<span class="canvas-badge">Canvas</span></div>
+    <div class="sidebar-canvas-item" onclick="openCanvas('aiCloudPassion')"><span class="item-icon">☁️</span> AI &amp; Cloud Passion<span class="canvas-badge">Canvas</span></div>
+    <div class="sidebar-canvas-item" onclick="openCanvas('dataCenterArch')"><span class="item-icon">🏢</span> Data Center Architecture<span class="canvas-badge">Canvas</span></div>
+    <div class="sidebar-divider"></div>
     <div class="sidebar-section">Quick Topics</div>
     <div class="sidebar-item" onclick="sendQuery('Tell me about Joel')"><span class="item-icon">👤</span> About Joel</div>
     <div class="sidebar-item" onclick="sendQuery('Skills')"><span class="item-icon">🛠️</span> Skills & Tech</div>
@@ -199,6 +289,23 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color
     </div>
   </main>
 </div>
+
+<!-- ─── CANVAS PANEL ─── -->
+<div class="canvas-overlay" id="canvasOverlay" onclick="closeCanvas()"></div>
+<div class="canvas-panel" id="canvasPanel">
+  <div class="canvas-header">
+    <div class="canvas-header-left">
+      <div class="canvas-header-icon" id="canvasIcon">🧠</div>
+      <div>
+        <div class="canvas-header-title" id="canvasTitle">Canvas</div>
+        <div class="canvas-header-badge">Explore</div>
+      </div>
+    </div>
+    <button class="canvas-close" onclick="closeCanvas()"><i class="fas fa-xmark"></i></button>
+  </div>
+  <div class="canvas-body" id="canvasBody"></div>
+</div>
+
 </div>
 
 <script>
@@ -283,6 +390,230 @@ const joel = {
     resume: "JoelOtepaWemboCloudAIDataArchitect.pdf"
   }
 };
+
+/* ── Canvas Panel Content ── */
+const canvasContent = {
+  agenticIdeas: {
+    icon: '🧠',
+    title: 'Agentic Ideas',
+    body: `
+      <div class="canvas-intro">I'm deeply passionate about building <strong>autonomous AI agents</strong> that can reason, plan, and execute complex tasks. Here are some of my key ideas and explorations in the agentic AI space.</div>
+      <div class="canvas-section" style="animation-delay:.1s">
+        <div class="canvas-section-title"><i class="fas fa-bolt"></i> Core Concepts</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔄 Durable Agentic Workflows</div>
+          <div class="canvas-card-desc">Building resilient AI agents using <strong>Temporal.io</strong> for long-running stateful executions. Combining LangChain with Temporal for fault-tolerant, human-in-the-loop AI reasoning that survives failures and restarts.</div>
+          <div class="canvas-tags"><span class="canvas-tag">Temporal.io</span><span class="canvas-tag">LangChain</span><span class="canvas-tag">Durable Execution</span></div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🤝 Multi-Agent Collaboration</div>
+          <div class="canvas-card-desc">Designing systems where multiple specialized agents collaborate — a planner agent delegates to researcher, coder, and reviewer agents, each with their own tools and expertise.</div>
+          <div class="canvas-tags"><span class="canvas-tag">LangGraph</span><span class="canvas-tag">CrewAI</span><span class="canvas-tag">Agent Swarms</span></div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🛠️ Tool-Calling & Function Agents</div>
+          <div class="canvas-card-desc">Agents that dynamically select and invoke external tools — APIs, databases, code interpreters — based on the task context. Self-correction loops ensure accuracy and reliability.</div>
+          <div class="canvas-tags"><span class="canvas-tag">Tool Use</span><span class="canvas-tag">ReAct Pattern</span><span class="canvas-tag">Self-Correction</span></div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.2s">
+        <div class="canvas-section-title"><i class="fas fa-lightbulb"></i> Research Interests</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🧬 AI Agents as a Service (AaaS)</div>
+          <div class="canvas-card-desc">Productizing AI agents into scalable multi-tenant SaaS platforms. Each tenant gets customizable agent pipelines with isolated vector stores and model configurations.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔍 RAG-Powered Knowledge Agents</div>
+          <div class="canvas-card-desc">Retrieval-Augmented Generation with hybrid search (dense + sparse), cross-encoder re-ranking, and dynamic context windows for precision knowledge retrieval.</div>
+          <div class="canvas-tags"><span class="canvas-tag">FAISS</span><span class="canvas-tag">ChromaDB</span><span class="canvas-tag">Pinecone</span><span class="canvas-tag">RAG</span></div>
+        </div>
+      </div>
+    `
+  },
+  aiModels: {
+    icon: '🤖',
+    title: 'AI Model Technologies',
+    body: `
+      <div class="canvas-intro">I work with cutting-edge AI models and frameworks — from fine-tuning large language models to deploying vision and NLP pipelines at scale.</div>
+      <div class="canvas-section" style="animation-delay:.1s">
+        <div class="canvas-section-title"><i class="fas fa-microchip"></i> Large Language Models</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🌟 OpenAI GPT-4 / GPT-4o</div>
+          <div class="canvas-card-desc">Advanced reasoning, code generation, and multi-modal capabilities. Used for complex agent orchestration and enterprise solutions.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔮 Anthropic Claude</div>
+          <div class="canvas-card-desc">Constitutional AI with extended context windows. Ideal for long-document analysis and safety-critical applications.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🦙 Meta LLaMA & Mistral</div>
+          <div class="canvas-card-desc">Open-weight models for fine-tuning and self-hosted deployments. I leverage these for sovereign AI solutions and domain-specific applications.</div>
+          <div class="canvas-tags"><span class="canvas-tag">Mistral 7B</span><span class="canvas-tag">LLaMA 3</span><span class="canvas-tag">Hugging Face</span></div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.2s">
+        <div class="canvas-section-title"><i class="fas fa-brain"></i> ML Frameworks & Tools</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">⚡ PyTorch & TensorFlow</div>
+          <div class="canvas-card-desc">Deep learning model training, fine-tuning transformers, and custom architectures for NLP and computer vision tasks.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔗 LangChain & LangGraph</div>
+          <div class="canvas-card-desc">Building complex LLM application chains, stateful multi-agent graphs, and production-grade AI workflows with observability via LangSmith.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">📊 MLOps Stack</div>
+          <div class="canvas-card-desc">End-to-end ML lifecycle management with MLflow for experiment tracking, model registry, and deployment automation.</div>
+          <div class="canvas-tags"><span class="canvas-tag">MLflow</span><span class="canvas-tag">LangSmith</span><span class="canvas-tag">OpenTelemetry</span><span class="canvas-tag">Weights & Biases</span></div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.3s">
+        <div class="canvas-section-title"><i class="fas fa-database"></i> Vector & Embedding Tech</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🗄️ Vector Databases</div>
+          <div class="canvas-card-desc">FAISS for high-performance similarity search, ChromaDB for lightweight experimentation, and Pinecone for managed production vector ops.</div>
+          <div class="canvas-tags"><span class="canvas-tag">FAISS</span><span class="canvas-tag">ChromaDB</span><span class="canvas-tag">Pinecone</span><span class="canvas-tag">Embeddings</span></div>
+        </div>
+      </div>
+    `
+  },
+  preferredStack: {
+    icon: '⚡',
+    title: 'My Preferred Stack',
+    body: `
+      <div class="canvas-intro">My go-to technologies for building production-grade AI-powered cloud applications — battle-tested across enterprise deployments.</div>
+      <div class="canvas-section" style="animation-delay:.1s">
+        <div class="canvas-section-title"><i class="fas fa-layer-group"></i> Backend & APIs</div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🐍</div><div><div class="canvas-stat-text">Python — FastAPI, Django, PyTorch</div><div class="canvas-stat-sub">Primary language for AI/ML and backend services</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🔷</div><div><div class="canvas-stat-text">TypeScript — Node.js, Next.js</div><div class="canvas-stat-sub">Full-stack web applications and API services</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🐹</div><div><div class="canvas-stat-text">Go — High-performance microservices</div><div class="canvas-stat-sub">Systems programming and cloud-native tools</div></div></div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.2s">
+        <div class="canvas-section-title"><i class="fas fa-cloud"></i> Cloud & Infrastructure</div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">☁️</div><div><div class="canvas-stat-text">AWS — Primary cloud provider</div><div class="canvas-stat-sub">EKS, Lambda, Aurora, S3, CloudFront, CDK</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🔧</div><div><div class="canvas-stat-text">Terraform & AWS CDK</div><div class="canvas-stat-sub">Infrastructure as Code for reproducible deployments</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🐳</div><div><div class="canvas-stat-text">Docker & Kubernetes</div><div class="canvas-stat-sub">Container orchestration (EKS, GKE, AKS)</div></div></div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.3s">
+        <div class="canvas-section-title"><i class="fas fa-robot"></i> AI & Data</div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🧠</div><div><div class="canvas-stat-text">LangChain, LangGraph, Temporal.io</div><div class="canvas-stat-sub">Agentic AI orchestration and durable execution</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">📦</div><div><div class="canvas-stat-text">PostgreSQL, Redis, MongoDB</div><div class="canvas-stat-sub">Relational, caching, and document databases</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🔍</div><div><div class="canvas-stat-text">FAISS, ChromaDB, Pinecone</div><div class="canvas-stat-sub">Vector databases for embeddings and RAG</div></div></div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.4s">
+        <div class="canvas-section-title"><i class="fas fa-arrows-spin"></i> DevOps & CI/CD</div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">🚀</div><div><div class="canvas-stat-text">GitHub Actions, Jenkins, ArgoCD</div><div class="canvas-stat-sub">Automated pipelines for testing and deployment</div></div></div>
+        <div class="canvas-stat"><div class="canvas-stat-icon">📈</div><div><div class="canvas-stat-text">Prometheus, Grafana, OpenTelemetry</div><div class="canvas-stat-sub">Observability and monitoring stack</div></div></div>
+      </div>
+    `
+  },
+  aiCloudPassion: {
+    icon: '☁️',
+    title: 'AI & Cloud Passion',
+    body: `
+      <div class="canvas-intro">I am <strong>deeply passionate about AI and Cloud computing</strong>. My career is built at the intersection of intelligent automation and scalable infrastructure — I believe the future belongs to AI-native cloud architectures.</div>
+      <div class="canvas-section" style="animation-delay:.1s">
+        <div class="canvas-section-title"><i class="fas fa-heart"></i> What Drives Me</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🌍 Democratizing AI with Cloud</div>
+          <div class="canvas-card-desc">Making AI accessible through cloud-native architectures. Building platforms where teams can deploy, scale, and monitor AI agents without deep infrastructure expertise.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔬 Bridging Research & Production</div>
+          <div class="canvas-card-desc">Taking cutting-edge AI research — multi-agent systems, durable execution, RAG optimization — and engineering production-grade solutions that enterprises can rely on.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🌱 Continuous Learning</div>
+          <div class="canvas-card-desc">The AI landscape evolves daily. I stay at the forefront by experimenting with new models, contributing to open-source projects, and writing about my findings on Medium and LinkedIn.</div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.2s">
+        <div class="canvas-section-title"><i class="fas fa-trophy"></i> Key Achievements</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🏅 AWS Certified Solutions Architect</div>
+          <div class="canvas-card-desc">Designing highly available, cost-efficient, and fault-tolerant systems on Amazon Web Services.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">💬 LinkedIn Top Voice — AI/ML</div>
+          <div class="canvas-card-desc">Recognized for thought leadership in AI, machine learning, and cloud architecture. Sharing insights with a growing community of technologists.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🏗️ Prodxcloud Ecosystem</div>
+          <div class="canvas-card-desc">Founded and architected Prodxcloud — a multi-tenant SaaS platform for automated provisioning and scaling ML services for high-traffic applications.</div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.3s">
+        <div class="canvas-section-title"><i class="fas fa-share-nodes"></i> Community & Content</div>
+        <div class="canvas-card">
+          <div class="canvas-card-desc">I regularly publish technical deep-dives on <a href="https://joelotepawembo.medium.com/" target="_blank" rel="noopener">Medium</a>, share insights on <a href="https://www.linkedin.com/in/joelwembo/" target="_blank" rel="noopener">LinkedIn</a>, and contribute to open-source on <a href="https://github.com/joelwembo" target="_blank" rel="noopener">GitHub</a>.</div>
+        </div>
+      </div>
+    `
+  },
+  dataCenterArch: {
+    icon: '🏢',
+    title: 'Cloud & Data Center Architecture',
+    body: `
+      <div class="canvas-intro">As a <strong>Cloud &amp; Data Center Architect</strong>, I design high-availability infrastructure that powers mission-critical workloads. My expertise spans physical data center design, hybrid cloud, and enterprise networking.</div>
+      <div class="canvas-section" style="animation-delay:.1s">
+        <div class="canvas-section-title"><i class="fas fa-server"></i> Data Center Design</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🏗️ High-Availability Architecture</div>
+          <div class="canvas-card-desc">Designing Tier III/IV data center architectures with redundant power, cooling, and network paths. Focus on 99.99% uptime for enterprise workloads.</div>
+          <div class="canvas-tags"><span class="canvas-tag">HA Design</span><span class="canvas-tag">Redundancy</span><span class="canvas-tag">Tier III/IV</span></div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔌 Cisco Networking</div>
+          <div class="canvas-card-desc">Enterprise network design using Cisco switches, routers, and firewalls. VLAN segmentation, BGP/OSPF routing, and SD-WAN implementations.</div>
+          <div class="canvas-tags"><span class="canvas-tag">Cisco</span><span class="canvas-tag">BGP</span><span class="canvas-tag">OSPF</span><span class="canvas-tag">SD-WAN</span></div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.2s">
+        <div class="canvas-section-title"><i class="fas fa-cloud-arrow-up"></i> Hybrid & Multi-Cloud</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">☁️ Multi-Cloud Strategy</div>
+          <div class="canvas-card-desc">Architecting workloads across AWS, Azure, and GCP for optimal performance, cost, and compliance. Kubernetes (EKS, GKE, AKS) for portable containerized deployments.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔄 Disaster Recovery & Business Continuity</div>
+          <div class="canvas-card-desc">Designing DR strategies with RPO/RTO targets, cross-region replication, automated failover, and infrastructure-as-code for rapid recovery.</div>
+          <div class="canvas-tags"><span class="canvas-tag">DR Planning</span><span class="canvas-tag">Cross-Region</span><span class="canvas-tag">Auto Failover</span></div>
+        </div>
+      </div>
+      <div class="canvas-section" style="animation-delay:.3s">
+        <div class="canvas-section-title"><i class="fas fa-shield-halved"></i> Security & Compliance</div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">🔐 Zero Trust Architecture</div>
+          <div class="canvas-card-desc">Implementing zero-trust security models with identity-based access, micro-segmentation, and continuous verification across cloud and on-premise environments.</div>
+        </div>
+        <div class="canvas-card">
+          <div class="canvas-card-title">📊 Observability & Monitoring</div>
+          <div class="canvas-card-desc">Full-stack observability with OpenTelemetry, Prometheus, and Grafana. Proactive alerting and automated incident response for infrastructure health.</div>
+          <div class="canvas-tags"><span class="canvas-tag">OpenTelemetry</span><span class="canvas-tag">Prometheus</span><span class="canvas-tag">Grafana</span></div>
+        </div>
+      </div>
+    `
+  }
+};
+
+/* ── Canvas Panel Functions ── */
+function openCanvas(key) {
+  const data = canvasContent[key];
+  if (!data) return;
+  document.getElementById('canvasIcon').textContent = data.icon;
+  document.getElementById('canvasTitle').textContent = data.title;
+  document.getElementById('canvasBody').innerHTML = data.body;
+  document.getElementById('canvasPanel').classList.add('open');
+  document.getElementById('canvasOverlay').classList.add('open');
+  // Close mobile sidebar if open
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+function closeCanvas() {
+  document.getElementById('canvasPanel').classList.remove('open');
+  document.getElementById('canvasOverlay').classList.remove('open');
+}
 
 /* ── Intro animation ── */
 (function(){
