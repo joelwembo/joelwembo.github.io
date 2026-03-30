@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
-title: Joel Otepa Wembo | Cloud Solutions Architect | Agentic AI Engineer | Data Center Architect | AWS Certified
-description: "Joel Wembo — Enterprise AI Agent Developer, Cloud Solutions & Data Center Architect at Prodxcloud. Specializing in Agentic AI, LangChain, LangGraph, Kubernetes, AWS, Terraform, MLOps, and multi-cloud infrastructure. Building Durable AI Agents and scaling mission-critical workloads."
-keywords: "Joel Wembo, Cloud Architect, Agentic AI, AI Agent Developer, Data Center Architect, AWS Certified, LangChain, LangGraph, Temporal.io, Kubernetes, Terraform, DevOps, MLOps, FastAPI, Django, Prodxcloud, RAG, Generative AI, Multi-Cloud, SaaS, PyTorch, FAISS"
+title: prodxcloud | Multi-Cloud Platform
+description: "prodxcloud is a multi-cloud platform for reliable provisioning, governance, and automation across AWS, Azure, GitHub, GitLab, and on-premises OpenClaws environments."
+keywords: "prodxcloud, Multi-Cloud Platform, AWS, Azure, GitHub, GitLab, OpenClaws, GitOps, platform engineering, provisioning automation, cloud governance"

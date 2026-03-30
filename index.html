@@ -1,773 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joel Wembo — AI & Cloud Solutions Architect | Agentic AI Engineer 3 | Portfolio</title>
-<meta name="description" content="Joel Wembo — Enterprise AI Agent Developer, Cloud Solutions & Data Center Architect. Specializing in Agentic AI, LangChain, Kubernetes, AWS, Terraform, and multi-cloud infrastructure. Explore projects, skills, and certifications.">
-<meta name="keywords" content="Joel Wembo, AI Agent Developer, Cloud Architect, Data Center Architect, Agentic AI, LangChain, LangGraph, Temporal.io, Kubernetes, AWS, Terraform, DevOps, MLOps, FastAPI, Django, Prodxcloud, RAG, FAISS, Generative AI, Multi-Cloud, SaaS">
-<meta name="author" content="Joel Otepa Wembo">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://joelwembo.github.io/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prodxcloud | Multi-Cloud Platform</title>
+  <meta name="description" content="prodxcloud is a multi-cloud platform for reliable provisioning, governance, and automation across AWS, Azure, GitHub, GitLab, and on-premises OpenClaws environments.">
+  <meta name="keywords" content="prodxcloud, multi-cloud platform, AWS, Azure, GitHub, GitLab, OpenClaws, GitOps, platform engineering, infrastructure automation">
+  <meta name="author" content="Joel Otepa Wembo">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://joelwembo.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joelwembo.github.io/">
+  <meta property="og:title" content="prodxcloud | Multi-Cloud Platform">
+  <meta property="og:description" content="Provision, govern, and automate delivery across AWS, Azure, GitHub, GitLab, and OpenClaws with opinionated blueprints and policy-driven guardrails.">
+  <meta property="og:image" content="https://joelwembo.github.io/mainapp.png">
+  <meta property="og:site_name" content="prodxcloud">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="prodxcloud | Multi-Cloud Platform">
+  <meta name="twitter:description" content="Multi-cloud provisioning, governance, and automation for AWS, Azure, GitHub, GitLab, and OpenClaws environments.">
+  <meta name="twitter:image" content="https://joelwembo.github.io/mainapp.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "prodxcloud",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://joelwembo.github.io/",
+    "description": "A multi-cloud platform for provisioning, governance, and Git-native automation across AWS, Azure, GitHub, GitLab, and OpenClaws environments.",
+    "creator": {
+      "@type": "Organization",
+      "name": "prodxcloud"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-elevated: rgba(8, 20, 38, 0.88);
+      --panel: rgba(11, 29, 52, 0.9);
+      --panel-strong: #0c1f39;
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-strong: #22c55e;
+      --accent-soft: rgba(56, 189, 248, 0.18);
+      --glow: rgba(56, 189, 248, 0.26);
+      --shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+      --radius: 24px;
+      --max-width: 1180px;
+    }
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://joelwembo.github.io/">
-<meta property="og:title" content="Joel Wembo — AI & Cloud Solutions Architect | Agentic AI Engineer">
-<meta property="og:description" content="Enterprise AI Agent Developer, Cloud Solutions & Data Center Architect. Building Durable AI Agents and scaling mission-critical workloads across multi-cloud environments.">
-<meta property="og:image" content="https://joelwembo.github.io/mainapp.png">
-<meta property="og:site_name" content="Joel Wembo AI Portfolio">
+    * {
+      box-sizing: border-box;
+    }
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@joelwembo1">
-<meta name="twitter:creator" content="@joelwembo1">
-<meta name="twitter:title" content="Joel Wembo — AI & Cloud Solutions Architect | Agentic AI Engineer">
-<meta name="twitter:description" content="Enterprise AI Agent Developer, Cloud Solutions & Data Center Architect. Building Durable AI Agents and scaling mission-critical workloads.">
-<meta name="twitter:image" content="https://joelwembo.github.io/mainapp.png">
+    html {
+      scroll-behavior: smooth;
+    }
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Joel Otepa Wembo",
-  "url": "https://joelwembo.github.io/",
-  "image": "https://joelwembo.github.io/mainapp.png",
-  "jobTitle": "Cloud Architect & Agentic AI Engineer",
-  "worksFor": { "@type": "Organization", "name": "Prodxcloud" },
-  "sameAs": [
-    "https://www.linkedin.com/in/joelwembo/",
-    "https://github.com/joelwembo",
-    "https://twitter.com/joelwembo1",
-    "https://joelotepawembo.medium.com/",
-    "https://prodxcloud.com"
-  ],
-  "knowsAbout": ["Agentic AI", "Cloud Architecture", "Data Center Architecture", "Kubernetes", "AWS", "Terraform", "LangChain", "LangGraph", "MLOps", "DevOps"]
-}
-</script>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(34, 197, 94, 0.14), transparent 25%),
+        linear-gradient(180deg, #020617 0%, #07111f 45%, #0a1426 100%);
+      line-height: 1.65;
+    }
 
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg1:#0d0d0d;--bg2:#171717;--bg3:#212121;--surface:#2a2a2a;--glass:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.06);--accent:#10a37f;--accent2:#1ed8a5;--accent-glow:rgba(16,163,127,0.25);--text:#ececec;--text-dim:#8e8ea0;--text-muted:#6e6e80;--user-bg:#2a2a2a;--bot-bg:transparent;--hover:rgba(255,255,255,0.05)}
-html,body{height:100%;font-family:'Inter',sans-serif;background:var(--bg1);color:var(--text);overflow:hidden}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* ─── INTRO SCREEN ─── */
-.intro-screen{position:fixed;inset:0;z-index:1000;background:var(--bg1);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
-.intro-screen.fade-out{opacity:0;transform:scale(1.05);pointer-events:none}
-.intro-logo{position:relative;margin-bottom:40px}
-.intro-ring{width:120px;height:120px;border-radius:50%;border:2px solid transparent;border-top-color:var(--accent);border-right-color:var(--accent2);animation:introSpin 1.5s cubic-bezier(.4,0,.2,1) forwards;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
-.intro-ring-2{width:140px;height:140px;border-radius:50%;border:1px solid transparent;border-bottom-color:rgba(16,163,127,0.3);animation:introSpin2 2s cubic-bezier(.4,0,.2,1) forwards;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
-@keyframes introSpin{0%{transform:translate(-50%,-50%) rotate(0deg) scale(0.5);opacity:0}50%{opacity:1}100%{transform:translate(-50%,-50%) rotate(360deg) scale(1);opacity:1}}
-@keyframes introSpin2{0%{transform:translate(-50%,-50%) rotate(0deg) scale(0.3);opacity:0}60%{opacity:0.5}100%{transform:translate(-50%,-50%) rotate(-360deg) scale(1);opacity:0.5}}
-.intro-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:#fff;animation:introFadeScale .8s .3s cubic-bezier(.4,0,.2,1) both;position:relative;z-index:1;box-shadow:0 0 60px var(--accent-glow)}
-@keyframes introFadeScale{from{opacity:0;transform:scale(0.6)}to{opacity:1;transform:scale(1)}}
-.intro-text{text-align:center;animation:introTextUp .7s .6s cubic-bezier(.4,0,.2,1) both}
-@keyframes introTextUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.intro-name{font-size:2rem;font-weight:700;color:var(--text);margin-bottom:8px;letter-spacing:-0.5px}
-.intro-title{font-size:.95rem;color:var(--text-dim);line-height:1.6;margin-bottom:32px}
-.intro-tagline{font-size:.8rem;color:var(--text-muted);animation:introPulse 2s 1.2s ease-in-out infinite;letter-spacing:1px;text-transform:uppercase}
-@keyframes introPulse{0%,100%{opacity:.5}50%{opacity:1}}
-.intro-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.intro-particle{position:absolute;width:2px;height:2px;background:var(--accent);border-radius:50%;animation:introFloat linear infinite}
-@keyframes introFloat{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1.5);opacity:0}}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-/* ─── MAIN APP (hidden initially) ─── */
-.app-wrapper{opacity:0;transform:translateY(20px);transition:opacity .8s .1s cubic-bezier(.4,0,.2,1),transform .8s .1s cubic-bezier(.4,0,.2,1);height:100vh}
-.app-wrapper.visible{opacity:1;transform:translateY(0)}
+    .page-shell {
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Layout */
-.app{display:flex;height:100vh;position:relative;z-index:2}
-.sidebar{width:260px;background:var(--bg2);border-right:1px solid var(--glass-border);display:flex;flex-direction:column;padding:20px 12px;flex-shrink:0;transition:all .3s}
-.sidebar-brand{display:flex;align-items:center;gap:10px;padding:8px 12px;margin-bottom:16px}
-.sidebar-brand-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;flex-shrink:0}
-.sidebar-brand-text{font-size:.85rem;font-weight:600;color:var(--text)}
-.sidebar-new-chat{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--glass-border);border-radius:10px;color:var(--text);font-size:.82rem;cursor:pointer;transition:all .2s;margin-bottom:20px;background:none}
-.sidebar-new-chat:hover{background:var(--hover);border-color:rgba(255,255,255,0.12)}
-.sidebar-new-chat i{font-size:.75rem;color:var(--text-dim)}
-.sidebar-divider{height:1px;background:var(--glass-border);margin:8px 0}
-.sidebar-section{font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin:16px 0 8px;padding-left:12px}
-.sidebar-item{font-size:.82rem;color:var(--text-dim);padding:10px 12px;border-radius:10px;cursor:pointer;transition:all .15s;margin-bottom:1px;display:flex;align-items:center;gap:8px}
-.sidebar-item:hover{background:var(--hover);color:var(--text)}
-.sidebar-item .item-icon{font-size:.9rem;width:20px;text-align:center}
-.sidebar-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 12px;margin-top:8px}
-.sidebar-links a{color:var(--text-muted);font-size:.95rem;transition:all .2s;text-decoration:none;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px}
-.sidebar-links a:hover{color:var(--accent2);background:var(--hover)}
-.sidebar-footer{margin-top:auto;padding:12px;border-top:1px solid var(--glass-border);text-align:center;font-size:.65rem;color:var(--text-muted)}
+    .page-shell::before,
+    .page-shell::after {
+      content: "";
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-/* Main chat area */
-.chat-area{flex:1;display:flex;flex-direction:column;min-width:0;background:var(--bg1)}
-.chat-header{padding:12px 24px;background:var(--bg1);border-bottom:1px solid var(--glass-border);display:flex;align-items:center;justify-content:space-between}
-.chat-header-left{display:flex;align-items:center;gap:8px}
-.chat-header-title{font-weight:600;font-size:.9rem;color:var(--text)}
-.chat-header-model{font-size:.7rem;color:var(--text-muted);background:var(--glass);padding:3px 10px;border-radius:6px;border:1px solid var(--glass-border)}
+    .page-shell::before {
+      top: -120px;
+      left: -80px;
+      background: rgba(56, 189, 248, 0.22);
+    }
 
-.messages{flex:1;overflow-y:auto;scroll-behavior:smooth;padding-bottom:16px}
-.messages::-webkit-scrollbar{width:6px}
-.messages::-webkit-scrollbar-track{background:transparent}
-.messages::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:3px}
-.messages::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.14)}
+    .page-shell::after {
+      right: -120px;
+      bottom: 10%;
+      background: rgba(34, 197, 94, 0.14);
+    }
 
-.msg{padding:24px 0;animation:msgIn .4s ease both}
-.msg-inner{max-width:768px;margin:0 auto;padding:0 24px;display:flex;gap:16px}
-.msg.user{background:var(--bg2)}
-.msg.bot{background:var(--bg1)}
-@keyframes msgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
-.avatar{width:32px;height:32px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;margin-top:2px}
-.avatar.bot{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 2px 12px var(--accent-glow)}
-.avatar.user{background:var(--surface);color:var(--text-dim);border:1px solid var(--glass-border)}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(2, 6, 23, 0.72);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
 
-.bubble{font-size:.92rem;line-height:1.75;flex:1;min-width:0;color:var(--text)}
-.bubble ul{margin:10px 0 6px 0;list-style:none;padding:0}
-.bubble ul li{padding:6px 0 6px 20px;position:relative;color:var(--text-dim)}
-.bubble ul li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.bubble a{color:var(--accent2);text-decoration:none;transition:all .2s;border-bottom:1px solid transparent}
-.bubble a:hover{border-bottom-color:var(--accent2)}
-.bubble strong{color:var(--text);font-weight:600}
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
 
-/* Quick suggestion cards */
-.quick-actions{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:16px}
-.quick-btn{background:var(--bg2);border:1px solid var(--glass-border);color:var(--text-dim);padding:12px 16px;border-radius:12px;font-size:.8rem;cursor:pointer;transition:all .2s;font-family:inherit;text-align:left;line-height:1.4}
-.quick-btn:hover{background:var(--surface);color:var(--text);border-color:rgba(255,255,255,0.12);transform:translateY(-1px)}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-/* Typing indicator */
-.typing{display:flex;gap:5px;padding:4px 0;align-items:center}
-.typing span{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:typeBounce 1.4s infinite;opacity:.35}
-.typing span:nth-child(2){animation-delay:.15s}
-.typing span:nth-child(3){animation-delay:.3s}
-@keyframes typeBounce{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-8px);opacity:1}}
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #eff6ff;
+      box-shadow: 0 12px 28px var(--glow);
+    }
 
-/* Input area */
-.input-area{padding:0 24px 24px;background:var(--bg1)}
-.input-wrap{max-width:768px;margin:0 auto;display:flex;gap:0;align-items:flex-end;background:var(--bg2);border:1px solid var(--glass-border);border-radius:16px;padding:4px;transition:all .3s;position:relative}
-.input-wrap:focus-within{border-color:rgba(16,163,127,0.4);box-shadow:0 0 0 1px rgba(16,163,127,0.15)}
-#userInput{flex:1;background:none;border:none;outline:none;color:var(--text);font-size:.9rem;font-family:inherit;padding:12px 16px;resize:none;min-height:24px;max-height:120px}
-#userInput::placeholder{color:var(--text-muted)}
-.send-btn{width:36px;height:36px;border-radius:10px;border:none;background:var(--accent);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;margin:2px}
-.send-btn:hover{background:var(--accent2);box-shadow:0 2px 12px var(--accent-glow)}
-.send-btn:disabled{opacity:.3;cursor:default}
-.input-footer{text-align:center;margin-top:10px;font-size:.68rem;color:var(--text-muted)}
+    .brand-copy strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
 
-/* ─── Canvas Panel ─── */
-.canvas-panel{position:fixed;top:0;right:-480px;width:480px;height:100vh;background:var(--bg2);border-left:1px solid var(--glass-border);z-index:200;transition:right .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,0.4)}
-.canvas-panel.open{right:0}
-.canvas-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--glass-border);background:var(--bg2);flex-shrink:0}
-.canvas-header-left{display:flex;align-items:center;gap:10px}
-.canvas-header-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 2px 12px var(--accent-glow)}
-.canvas-header-title{font-weight:600;font-size:.92rem;color:var(--text)}
-.canvas-header-badge{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent2);background:rgba(16,163,127,0.12);padding:3px 8px;border-radius:6px;font-weight:600}
-.canvas-close{background:none;border:none;color:var(--text-dim);font-size:1rem;cursor:pointer;padding:6px;border-radius:8px;transition:all .2s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
-.canvas-close:hover{background:var(--hover);color:var(--text)}
-.canvas-body{flex:1;overflow-y:auto;padding:24px 20px;scroll-behavior:smooth}
-.canvas-body::-webkit-scrollbar{width:5px}
-.canvas-body::-webkit-scrollbar-track{background:transparent}
-.canvas-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:3px}
-.canvas-section{margin-bottom:28px;animation:canvasIn .5s ease both}
-@keyframes canvasIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.canvas-section-title{font-size:.78rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent2);margin-bottom:12px;font-weight:600;display:flex;align-items:center;gap:6px}
-.canvas-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:16px;margin-bottom:10px;transition:all .2s}
-.canvas-card:hover{background:var(--hover);border-color:rgba(255,255,255,0.1)}
-.canvas-card-title{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.canvas-card-desc{font-size:.8rem;color:var(--text-dim);line-height:1.7}
-.canvas-tag{display:inline-block;font-size:.68rem;background:rgba(16,163,127,0.1);color:var(--accent2);padding:3px 10px;border-radius:20px;margin:3px 3px 3px 0;border:1px solid rgba(16,163,127,0.15);font-weight:500}
-.canvas-tags{margin-top:10px;display:flex;flex-wrap:wrap}
-.canvas-stat{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--glass-border)}
-.canvas-stat:last-child{border-bottom:none}
-.canvas-stat-icon{width:36px;height:36px;border-radius:10px;background:var(--glass);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.canvas-stat-text{font-size:.82rem;color:var(--text)}
-.canvas-stat-sub{font-size:.72rem;color:var(--text-muted)}
-.canvas-intro{font-size:.84rem;color:var(--text-dim);line-height:1.8;margin-bottom:20px;padding:14px 16px;background:var(--glass);border-radius:12px;border:1px solid var(--glass-border)}
-.canvas-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:199;backdrop-filter:blur(3px)}
-.canvas-overlay.open{display:block}
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
 
-/* Sidebar canvas items */
-.sidebar-canvas-item{font-size:.82rem;color:var(--text-dim);padding:10px 12px;border-radius:10px;cursor:pointer;transition:all .15s;margin-bottom:1px;display:flex;align-items:center;gap:8px;position:relative}
-.sidebar-canvas-item:hover{background:var(--hover);color:var(--text)}
-.sidebar-canvas-item .item-icon{font-size:.9rem;width:20px;text-align:center}
-.sidebar-canvas-item .canvas-badge{margin-left:auto;font-size:.55rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
 
-/* Mobile */
-.mobile-header{display:none;padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--glass-border);align-items:center;gap:12px}
-.mobile-header .sidebar-brand-text{font-size:.95rem}
-.menu-btn{background:none;border:none;color:var(--text);font-size:1.1rem;cursor:pointer;padding:4px}
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
 
-@media(max-width:768px){
-  .sidebar{position:fixed;left:-280px;top:0;bottom:0;z-index:100;transition:left .3s ease;width:260px}
-  .sidebar.open{left:0}
-  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99;backdrop-filter:blur(4px)}
-  .sidebar-overlay.open{display:block}
-  .mobile-header{display:flex}
-  .chat-header{display:none}
-  .msg-inner{padding:0 16px}
-  .input-area{padding:0 16px 16px}
-  .intro-name{font-size:1.6rem}
-  .intro-title{font-size:.85rem;padding:0 20px}
-  .quick-actions{grid-template-columns:1fr 1fr}
-  .canvas-panel{width:100%;right:-100%}
-}
-</style>
+    .hero {
+      padding: 76px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .section-card,
+    .callout,
+    .footer-panel {
+      background: var(--bg-elevated);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.78);
+      color: #bae6fd;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-strong);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.04;
+      max-width: 11ch;
+    }
+
+    .lead {
+      margin: 22px 0 28px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      color: #eff6ff;
+      box-shadow: 0 18px 32px var(--glow);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.86);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .hero-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .hero-note {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .hero-note strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-note span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-panel {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .panel-header span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .panel-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #bae6fd;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .stack-list,
+    .integrations-list,
+    .bullet-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stack-item,
+    .integration-card,
+    .step-card,
+    .signal-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .stack-item strong,
+    .integration-card h3,
+    .signal-card h3,
+    .step-card h3 {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .stack-item p,
+    .integration-card p,
+    .signal-card p,
+    .step-card p,
+    .repo-copy,
+    .footer-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      max-width: 60ch;
+      color: var(--muted);
+    }
+
+    .grid-3,
+    .grid-2,
+    .steps-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-card {
+      padding: 26px;
+    }
+
+    .section-card .kicker {
+      color: #7dd3fc;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-card ul {
+      padding-left: 18px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .section-card li + li {
+      margin-top: 8px;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .step-index {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #bae6fd;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .callout {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 24px;
+      align-items: center;
+      margin: 28px 0 40px;
+    }
+
+    .callout ul {
+      padding-left: 18px;
+      margin: 16px 0 0;
+      color: var(--muted);
+    }
+
+    .repo-panel {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .repo-panel code {
+      display: block;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #020617;
+      color: #bfdbfe;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      overflow-x: auto;
+      font-size: 0.88rem;
+      border: 1px solid rgba(59, 130, 246, 0.18);
+    }
+
+    .footer {
+      padding: 0 0 48px;
+    }
+
+    .footer-panel {
+      padding: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--text);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .callout,
+      .grid-3,
+      .grid-2,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-notes {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-bar,
+      .section-heading,
+      .footer-panel {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .section-card,
+      .callout,
+      .footer-panel {
+        padding: 22px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="brand" href="#top">
+          <span class="brand-mark">PX</span>
+          <span class="brand-copy">
+            <strong>prodxcloud</strong>
+            <span>Multi-Cloud Platform</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#platform">Platform</a>
+          <a href="#integrations">Integrations</a>
+          <a href="#delivery">Delivery Model</a>
+          <a href="#operations">Operations</a>
+          <a href="#repo">Repository</a>
+        </nav>
+      </div>
+    </header>
 
-<!-- ─── ANIMATED INTRO SCREEN ─── -->
-<div class="intro-screen" id="introScreen">
-  <div class="intro-particles" id="introParticles"></div>
-  <div class="intro-logo">
-    <div class="intro-ring"></div>
-    <div class="intro-ring-2"></div>
-    <div class="intro-avatar">JW</div>
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Reliable provisioning, governance, and automation</div>
+            <h1>Ship faster across every cloud without giving up control.</h1>
+            <p class="lead">
+              prodxcloud is a multi-cloud platform engineered for teams that need dependable provisioning,
+              governance, and automation across AWS, Azure, GitHub, GitLab, and on-premises OpenClaws
+              environments. We streamline delivery with opinionated blueprints, policy-driven guardrails,
+              and Git-native workflows so you can move quickly with confidence.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://prodxcloud.com" target="_blank" rel="noreferrer">Visit prodxcloud.com</a>
+              <a class="btn btn-secondary" href="#repo">Explore repository usage</a>
+            </div>
+            <div class="hero-notes">
+              <div class="hero-note">
+                <strong>Multi-cloud by default</strong>
+                <span>AWS, Azure, and OpenClaws orchestration designed into the platform foundation.</span>
+              </div>
+              <div class="hero-note">
+                <strong>Git-native delivery</strong>
+                <span>Approvals, CI/CD, and auditability centered on GitHub and GitLab workflows.</span>
+              </div>
+              <div class="hero-note">
+                <strong>Governed automation</strong>
+                <span>Reusable blueprints, drift detection, policy controls, and least-privilege access.</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Platform summary">
+            <div class="panel-header">
+              <div>
+                <h2>Platform at a glance</h2>
+                <span>Purpose-built for platform teams and cloud operators</span>
+              </div>
+              <div class="panel-badge">Live Ops</div>
+            </div>
+            <div class="stack-list">
+              <div class="stack-item">
+                <strong>Provisioning automation</strong>
+                <p>Reusable IaC blueprints, environment vending, and guided remediation for drift.</p>
+              </div>
+              <div class="stack-item">
+                <strong>Secure and governed</strong>
+                <p>Policy controls, secrets management, identity-aware pipelines, and evidence collection.</p>
+              </div>
+              <div class="stack-item">
+                <strong>Observability and reliability</strong>
+                <p>Centralized monitoring, SLO tracking, runbook automation, and self-healing actions.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="platform">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Platform foundations</p>
+              <h2>Designed to standardize delivery from infrastructure to production operations.</h2>
+            </div>
+            <p>Opinionated blueprints, policy guardrails, and repeatable workflows help teams provision fast while keeping security, compliance, and reliability built in.</p>
+          </div>
+          <div class="grid-3">
+            <article class="section-card">
+              <div class="kicker">Provisioning</div>
+              <h3>Blueprint-driven environments</h3>
+              <p class="repo-copy">Curated templates for applications, data pipelines, networking, Kubernetes, and security baselines create consistent environments from day one.</p>
+              <ul>
+                <li>One-click or API-driven environment vending for dev, stage, and prod.</li>
+                <li>Reusable IaC patterns that reduce duplication and accelerate onboarding.</li>
+              </ul>
+            </article>
+            <article class="section-card">
+              <div class="kicker">Governance</div>
+              <h3>Policy-driven guardrails</h3>
+              <p class="repo-copy">Guardrails for least privilege, encryption, tagging, and network isolation are embedded into the platform rather than bolted on later.</p>
+              <ul>
+                <li>Short-lived credentials and per-environment roles for identity-aware pipelines.</li>
+                <li>Compliance packs aligned to SOC 2 and ISO/IEC 27001-ready controls.</li>
+              </ul>
+            </article>
+            <article class="section-card">
+              <div class="kicker">Automation</div>
+              <h3>Git-native change management</h3>
+              <p class="repo-copy">Declarative state lives in GitHub or GitLab so delivery, approval, and audit trails stay close to the engineering workflows teams already use.</p>
+              <ul>
+                <li>Pull and merge request-based promotion with policy checks.</li>
+                <li>Automated drift detection to keep infrastructure compliant over time.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="integrations">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Supported integrations</p>
+              <h2>Built for hybrid delivery across source control, public cloud, and private infrastructure.</h2>
+            </div>
+            <p>prodxcloud keeps the control plane cohesive while supporting the operational realities of Git-native engineering teams, modern cloud targets, and on-premises requirements.</p>
+          </div>
+          <div class="grid-3 integrations-list">
+            <article class="integration-card">
+              <h3>Source control &amp; CI/CD</h3>
+              <p>First-class GitHub and GitLab integrations for Actions workflows, reusable templates, merge-request promotion, compliance checks, approvals, and audit trails.</p>
+            </article>
+            <article class="integration-card">
+              <h3>Cloud targets</h3>
+              <p>AWS support spans EKS/ECS, EC2/ASG, RDS, Lambda, API Gateway, VPC networking, and IAM. Azure support includes AKS, App Service, Functions, SQL, Storage, VNets, Private Link, and AAD integration.</p>
+            </article>
+            <article class="integration-card">
+              <h3>OpenClaws environments</h3>
+              <p>On-premises and private cloud connectors support regulated or edge deployments with compute, networking, and storage orchestration. The OpenClaws spelling is retained intentionally per the provided platform name.</p>
+            </article>
+            <article class="integration-card">
+              <h3>Kubernetes platform services</h3>
+              <p>Cluster lifecycle management, GitOps deployments, and add-on orchestration give platform teams a repeatable way to standardize cloud-native delivery.</p>
+            </article>
+            <article class="integration-card">
+              <h3>Secrets &amp; identity</h3>
+              <p>Vault and KMS backends, SSO/SAML, and workload identity federation keep secrets and access aligned with least-privilege operations.</p>
+            </article>
+            <article class="integration-card">
+              <h3>Observability</h3>
+              <p>Centralized logging, metrics, traces, alert routing, and runbook automation support fast issue detection and confident remediation.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="delivery">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Provisioning &amp; delivery model</p>
+              <h2>Standardize how environments are created, promoted, and kept compliant.</h2>
+            </div>
+            <p>Each stage of the delivery flow is engineered to reduce manual coordination and improve repeatability for teams operating across multiple platforms.</p>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-index">1</div>
+              <h3>Connect Git</h3>
+              <p>Authorize GitHub and/or GitLab repositories plus pipeline runners to anchor delivery in existing engineering workflows.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-index">2</div>
+              <h3>Connect clouds</h3>
+              <p>Add AWS, Azure, and optional OpenClaws accounts or projects with least-privilege roles and clear account boundaries.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-index">3</div>
+              <h3>Select a blueprint</h3>
+              <p>Choose from application, data, or platform foundation blueprints that enforce consistent standards from the start.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-index">4</div>
+              <h3>Provision</h3>
+              <p>Launch environments through pipeline or UI workflows while policies enforce security, cost, and compliance guardrails.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-index">5</div>
+              <h3>Deploy with GitOps</h3>
+              <p>Promote changes through environments using approvals, automated checks, and declarative state stored in Git.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="operations">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Security, compliance, and reliability</p>
+              <h2>Operate with guardrails, visibility, and recovery paths already in place.</h2>
+            </div>
+            <p>From least-privilege access to chaos-safe rollouts, prodxcloud is positioned to help operators sustain control without slowing down delivery.</p>
+          </div>
+          <div class="grid-2">
+            <article class="signal-card">
+              <h3>Security &amp; compliance</h3>
+              <p>Identity-aware pipelines, encryption, tagging, network isolation, evidence collection, and audit logs tied directly to Git history support governed delivery across environments.</p>
+            </article>
+            <article class="signal-card">
+              <h3>Operations &amp; reliability</h3>
+              <p>Golden signals, SLO dashboards, automated remediation, certificate rotation, canary and blue-green strategies, plus rollback conditions reduce operational risk.</p>
+            </article>
+          </div>
+
+          <div class="callout" id="repo">
+            <div>
+              <p class="eyebrow">About this repository</p>
+              <h2>Shared GitHub assets for prodxcloud projects.</h2>
+              <p class="repo-copy">
+                This <code>.github</code> repository hosts shared GitHub assets used across prodxcloud projects,
+                including workflows, templates, and community files. It exists to give teams a consistent
+                foundation for automation, approvals, and reusable delivery standards.
+              </p>
+              <ul class="bullet-list">
+                <li>Reusable workflows for platform and application delivery.</li>
+                <li>Shared templates for repeatable project setup and governance.</li>
+                <li>Community and repository standards that align with Git-native operating models.</li>
+              </ul>
+            </div>
+            <div class="repo-panel">
+              <strong>Reference a shared workflow</strong>
+              <p class="repo-copy">From another repository, use the standard reusable workflow syntax:</p>
+              <code>jobs:
+  platform-delivery:
+    uses: joelwembo/joelwembo.github.io/.github/workflows/&lt;workflow-file&gt;@main</code>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-panel">
+          <div>
+            <strong>prodxcloud Multi-Cloud Platform</strong>
+            <p>Provision, govern, and automate delivery across AWS, Azure, GitHub, GitLab, and OpenClaws.</p>
+          </div>
+          <div class="footer-links">
+            <a href="https://prodxcloud.com" target="_blank" rel="noreferrer">Website</a>
+            <a href="https://github.com/joelwembo" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
-  <div class="intro-text">
-    <div class="intro-name">Joel Wembo</div>
-    <div class="intro-title">Enterprise AI Agent Developer<br>Cloud Solutions &amp; Data Center Architect</div>
-    <div class="intro-tagline">Initializing AI Assistant...</div>
-  </div>
-</div>
-
-<!-- ─── MAIN APP ─── -->
-<div class="app-wrapper" id="appWrapper">
-<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
-
-<div class="app">
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <div class="sidebar-brand-icon">JW</div>
-      <div class="sidebar-brand-text">Joel Wembo AI</div>
-    </div>
-    <div class="sidebar-new-chat" onclick="clearChat()">
-      <i class="fas fa-plus"></i> New Chat
-    </div>
-    <div class="sidebar-section">Explore</div>
-    <div class="sidebar-canvas-item" onclick="openCanvas('agenticIdeas')"><span class="item-icon">🧠</span> Agentic Ideas<span class="canvas-badge">Canvas</span></div>
-    <div class="sidebar-canvas-item" onclick="openCanvas('aiModels')"><span class="item-icon">🤖</span> AI Model Technologies<span class="canvas-badge">Canvas</span></div>
-    <div class="sidebar-canvas-item" onclick="openCanvas('preferredStack')"><span class="item-icon">⚡</span> My Preferred Stack<span class="canvas-badge">Canvas</span></div>
-    <div class="sidebar-canvas-item" onclick="openCanvas('aiCloudPassion')"><span class="item-icon">☁️</span> AI &amp; Cloud Passion<span class="canvas-badge">Canvas</span></div>
-    <div class="sidebar-canvas-item" onclick="openCanvas('dataCenterArch')"><span class="item-icon">🏢</span> Data Center Architecture<span class="canvas-badge">Canvas</span></div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Quick Topics</div>
-    <div class="sidebar-item" onclick="sendQuery('Tell me about Joel')"><span class="item-icon">👤</span> About Joel</div>
-    <div class="sidebar-item" onclick="sendQuery('Skills')"><span class="item-icon">🛠️</span> Skills & Tech</div>
-    <div class="sidebar-item" onclick="sendQuery('Projects')"><span class="item-icon">🚀</span> Projects</div>
-    <div class="sidebar-item" onclick="sendQuery('Certifications')"><span class="item-icon">🏅</span> Certifications</div>
-    <div class="sidebar-item" onclick="sendQuery('Contact')"><span class="item-icon">📬</span> Contact</div>
-    <div class="sidebar-item" onclick="sendQuery('Resume')"><span class="item-icon">📄</span> Resume</div>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-section">Connect</div>
-    <div class="sidebar-links">
-      <a href="https://www.linkedin.com/in/joelwembo/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/joelwembo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://twitter.com/joelwembo1" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://joelotepawembo.medium.com/" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
-      <a href="https://www.facebook.com/joel.o.wembo.1/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://prodxcloud.com" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a>
-    </div>
-    <div class="sidebar-footer">🌍 Available Worldwide &middot; &copy; 2024 Joel Wembo</div>
-  </aside>
-
-  <main class="chat-area">
-    <div class="mobile-header">
-      <button class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
-      <div class="sidebar-brand-text">Joel Wembo AI</div>
-    </div>
-    <div class="chat-header">
-      <div class="chat-header-left">
-        <div class="chat-header-title">Joel Wembo AI</div>
-      </div>
-      <div class="chat-header-model">Portfolio Assistant</div>
-    </div>
-    <div class="messages" id="messages"></div>
-    <div class="input-area">
-      <div class="input-wrap">
-        <input type="text" id="userInput" placeholder="Message Joel's AI assistant..." autocomplete="off">
-        <button class="send-btn" onclick="handleSend()" id="sendBtn"><i class="fas fa-arrow-up"></i></button>
-      </div>
-      <div class="input-footer">Joel's AI assistant can share info about skills, projects &amp; experience</div>
-    </div>
-  </main>
-</div>
-
-<!-- ─── CANVAS PANEL ─── -->
-<div class="canvas-overlay" id="canvasOverlay" onclick="closeCanvas()"></div>
-<div class="canvas-panel" id="canvasPanel">
-  <div class="canvas-header">
-    <div class="canvas-header-left">
-      <div class="canvas-header-icon" id="canvasIcon">🧠</div>
-      <div>
-        <div class="canvas-header-title" id="canvasTitle">Canvas</div>
-        <div class="canvas-header-badge">Explore</div>
-      </div>
-    </div>
-    <button class="canvas-close" onclick="closeCanvas()"><i class="fas fa-xmark"></i></button>
-  </div>
-  <div class="canvas-body" id="canvasBody"></div>
-</div>
-
-</div>
-
-<script>
-const joel = {
-  name: "Joel Otepa Wembo",
-  handle: "@prodxcloud",
-  title: "Cloud Architect | Agentic AI Engineer | Data Center Architect at Prodxcloud",
-  location: "Available Worldwide",
-  bio: "Hi there, I'm Joel Wembo 👋 — Cloud Architect, Agentic AI Engineer, and Data Center Architect at Prodxcloud. I specialize in bridging the gap between robust infrastructure and intelligent automation. My work focuses on building Durable AI Agents and scaling mission-critical workloads across multi-cloud environments.",
-  skills: [
-    "AI Agents as a Service (AaaS)",
-    "Machine Learning & Deep Learning (PyTorch, TensorFlow)",
-    "NLP, Computer Vision, Generative AI",
-    "LangChain, LangGraph, Temporal.io SDK (Durable Execution)",
-    "Fine-tuning Mistral, Hugging Face, OpenAI/Claude API",
-    "Vector Ops: FAISS, ChromaDB, Pinecone, RAG Optimization",
-    "Agent Patterns: Tool-calling, Multi-agent Collaboration, Self-correction Loops",
-    "Data Center Architecture & Cisco Networking",
-    "Cloud Architecture (AWS, Azure, GCP)",
-    "Infrastructure: Kubernetes (EKS, GKE, AKS), Terraform, AWS CDK, Docker",
-    "High-Availability Data Center Design, Disaster Recovery, Hybrid Cloud",
-    "Managed Services: AWS Lambda, Amazon Aurora, Azure AD, Google Cloud Run",
-    "Monitoring: OpenTelemetry, Prometheus, Grafana",
-    "Languages: Python (FastAPI, Django, PyTorch), Go, TypeScript",
-    "Database: PostgreSQL, Redis, MongoDB, Vector Databases",
-    "Multi-Tenant SaaS & PaaS Platforms",
-    "MLOps (MLflow, LangSmith, OpenTelemetry)",
-    "CI/CD Automation & DevOps"
-  ],
-  techStack: {
-    agenticAI: {
-      title: "🤖 Agentic AI & Orchestration",
-      items: [
-        "<strong>Orchestration:</strong> LangChain, LangGraph, Temporal.io SDK (Durable Execution)",
-        "<strong>Models:</strong> Fine-tuning Mistral, Hugging Face, OpenAI/Claude API Integration",
-        "<strong>Vector Ops:</strong> FAISS, ChromaDB, Pinecone, RAG Optimization",
-        "<strong>Agent Patterns:</strong> Tool-calling, Multi-agent Collaboration, Self-correction Loops"
-      ]
-    },
-    cloud: {
-      title: "☁️ Cloud & Data Center",
-      items: [
-        "<strong>Infrastructure:</strong> Kubernetes (EKS, GKE, AKS), Terraform, AWS CDK, Docker",
-        "<strong>Architecture:</strong> High-Availability Data Center Design, Disaster Recovery, Hybrid Cloud",
-        "<strong>Managed Services:</strong> AWS Lambda, Amazon Aurora, Azure AD, Google Cloud Run",
-        "<strong>Monitoring:</strong> OpenTelemetry, Prometheus, Grafana"
-      ]
-    },
-    backend: {
-      title: "💻 Backend & Development",
-      items: [
-        "<strong>Languages:</strong> Python (FastAPI, Django, PyTorch), Go, TypeScript",
-        "<strong>Database:</strong> PostgreSQL, Redis, MongoDB, Vector Databases"
-      ]
-    }
-  },
-  certifications: [
-    "AWS Certified Solutions Architect – Associate",
-    "Telecommunications Senior Engineer",
-    "Data Center Architect",
-    "AI Agent Developer Specialist",
-    "LinkedIn Top Voice - AI/ML"
-  ],
-  projects: [
-    "🧠 <strong>Durable Agentic Workflows</strong> — Developing resilient AI agents using Temporal.io to manage long-running stateful executions. Combining LangChain with Temporal for fault-tolerant, human-in-the-loop AI reasoning.",
-    "📄 <strong>Fine-Tuned RAG Resume Parser</strong> — High-precision parser leveraging PyTorch and Hugging Face (Mistral) with hybrid search and cross-encoder re-ranking for structured data extraction.",
-    "🏗️ <strong>Prodxcloud Ecosystem</strong> — Leading multi-tenant SaaS platform architecture, focusing on automated provisioning and scaling ML services for high-traffic applications.",
-    "End-to-End CI/CD DevOps with Jenkins, Docker, Kubernetes, ArgoCD, GitHub Actions, AWS EC2 and Terraform",
-    "End-to-End CI/CD Pipeline for frontend to AWS CloudFront using Ansible, Jenkins and Terraform",
-    "AWS EKS deployment using GitHub Actions, Docker and ArgoCD for React Applications",
-    "Terraform & CloudFront, Route53 and S3 Bucket automation",
-    "VaLLM - Sovereign AI for Cloud Operations (RAG + FAISS reasoning engine)",
-    "Django Multi-tenant SaaS eCommerce with Kubernetes"
-  ],
-  links: {
-    linkedin: "https://www.linkedin.com/in/joelwembo/",
-    github: "https://github.com/joelwembo",
-    twitter: "https://twitter.com/joelwembo1",
-    medium: "https://joelotepawembo.medium.com/",
-    facebook: "https://www.facebook.com/joel.o.wembo.1/",
-    portfolio: "https://prodxcloud.com",
-    resume: "JoelOtepaWemboCloudAIDataArchitect.pdf"
-  }
-};
-
-/* ── Canvas Panel Content ── */
-const canvasContent = {
-  agenticIdeas: {
-    icon: '🧠',
-    title: 'Agentic Ideas',
-    body: `
-      <div class="canvas-intro">I'm deeply passionate about building <strong>autonomous AI agents</strong> that can reason, plan, and execute complex tasks. Here are some of my key ideas and explorations in the agentic AI space.</div>
-      <div class="canvas-section" style="animation-delay:.1s">
-        <div class="canvas-section-title"><i class="fas fa-bolt"></i> Core Concepts</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔄 Durable Agentic Workflows</div>
-          <div class="canvas-card-desc">Building resilient AI agents using <strong>Temporal.io</strong> for long-running stateful executions. Combining LangChain with Temporal for fault-tolerant, human-in-the-loop AI reasoning that survives failures and restarts.</div>
-          <div class="canvas-tags"><span class="canvas-tag">Temporal.io</span><span class="canvas-tag">LangChain</span><span class="canvas-tag">Durable Execution</span></div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🤝 Multi-Agent Collaboration</div>
-          <div class="canvas-card-desc">Designing systems where multiple specialized agents collaborate — a planner agent delegates to researcher, coder, and reviewer agents, each with their own tools and expertise.</div>
-          <div class="canvas-tags"><span class="canvas-tag">LangGraph</span><span class="canvas-tag">CrewAI</span><span class="canvas-tag">Agent Swarms</span></div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🛠️ Tool-Calling & Function Agents</div>
-          <div class="canvas-card-desc">Agents that dynamically select and invoke external tools — APIs, databases, code interpreters — based on the task context. Self-correction loops ensure accuracy and reliability.</div>
-          <div class="canvas-tags"><span class="canvas-tag">Tool Use</span><span class="canvas-tag">ReAct Pattern</span><span class="canvas-tag">Self-Correction</span></div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.2s">
-        <div class="canvas-section-title"><i class="fas fa-lightbulb"></i> Research Interests</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🧬 AI Agents as a Service (AaaS)</div>
-          <div class="canvas-card-desc">Productizing AI agents into scalable multi-tenant SaaS platforms. Each tenant gets customizable agent pipelines with isolated vector stores and model configurations.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔍 RAG-Powered Knowledge Agents</div>
-          <div class="canvas-card-desc">Retrieval-Augmented Generation with hybrid search (dense + sparse), cross-encoder re-ranking, and dynamic context windows for precision knowledge retrieval.</div>
-          <div class="canvas-tags"><span class="canvas-tag">FAISS</span><span class="canvas-tag">ChromaDB</span><span class="canvas-tag">Pinecone</span><span class="canvas-tag">RAG</span></div>
-        </div>
-      </div>
-    `
-  },
-  aiModels: {
-    icon: '🤖',
-    title: 'AI Model Technologies',
-    body: `
-      <div class="canvas-intro">I work with cutting-edge AI models and frameworks — from fine-tuning large language models to deploying vision and NLP pipelines at scale.</div>
-      <div class="canvas-section" style="animation-delay:.1s">
-        <div class="canvas-section-title"><i class="fas fa-microchip"></i> Large Language Models</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🌟 OpenAI GPT-4 / GPT-4o</div>
-          <div class="canvas-card-desc">Advanced reasoning, code generation, and multi-modal capabilities. Used for complex agent orchestration and enterprise solutions.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔮 Anthropic Claude</div>
-          <div class="canvas-card-desc">Constitutional AI with extended context windows. Ideal for long-document analysis and safety-critical applications.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🦙 Meta LLaMA & Mistral</div>
-          <div class="canvas-card-desc">Open-weight models for fine-tuning and self-hosted deployments. I leverage these for sovereign AI solutions and domain-specific applications.</div>
-          <div class="canvas-tags"><span class="canvas-tag">Mistral 7B</span><span class="canvas-tag">LLaMA 3</span><span class="canvas-tag">Hugging Face</span></div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.2s">
-        <div class="canvas-section-title"><i class="fas fa-brain"></i> ML Frameworks & Tools</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">⚡ PyTorch & TensorFlow</div>
-          <div class="canvas-card-desc">Deep learning model training, fine-tuning transformers, and custom architectures for NLP and computer vision tasks.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔗 LangChain & LangGraph</div>
-          <div class="canvas-card-desc">Building complex LLM application chains, stateful multi-agent graphs, and production-grade AI workflows with observability via LangSmith.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">📊 MLOps Stack</div>
-          <div class="canvas-card-desc">End-to-end ML lifecycle management with MLflow for experiment tracking, model registry, and deployment automation.</div>
-          <div class="canvas-tags"><span class="canvas-tag">MLflow</span><span class="canvas-tag">LangSmith</span><span class="canvas-tag">OpenTelemetry</span><span class="canvas-tag">Weights & Biases</span></div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.3s">
-        <div class="canvas-section-title"><i class="fas fa-database"></i> Vector & Embedding Tech</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🗄️ Vector Databases</div>
-          <div class="canvas-card-desc">FAISS for high-performance similarity search, ChromaDB for lightweight experimentation, and Pinecone for managed production vector ops.</div>
-          <div class="canvas-tags"><span class="canvas-tag">FAISS</span><span class="canvas-tag">ChromaDB</span><span class="canvas-tag">Pinecone</span><span class="canvas-tag">Embeddings</span></div>
-        </div>
-      </div>
-    `
-  },
-  preferredStack: {
-    icon: '⚡',
-    title: 'My Preferred Stack',
-    body: `
-      <div class="canvas-intro">My go-to technologies for building production-grade AI-powered cloud applications — battle-tested across enterprise deployments.</div>
-      <div class="canvas-section" style="animation-delay:.1s">
-        <div class="canvas-section-title"><i class="fas fa-layer-group"></i> Backend & APIs</div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🐍</div><div><div class="canvas-stat-text">Python — FastAPI, Django, PyTorch</div><div class="canvas-stat-sub">Primary language for AI/ML and backend services</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🔷</div><div><div class="canvas-stat-text">TypeScript — Node.js, Next.js</div><div class="canvas-stat-sub">Full-stack web applications and API services</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🐹</div><div><div class="canvas-stat-text">Go — High-performance microservices</div><div class="canvas-stat-sub">Systems programming and cloud-native tools</div></div></div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.2s">
-        <div class="canvas-section-title"><i class="fas fa-cloud"></i> Cloud & Infrastructure</div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">☁️</div><div><div class="canvas-stat-text">AWS — Primary cloud provider</div><div class="canvas-stat-sub">EKS, Lambda, Aurora, S3, CloudFront, CDK</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🔧</div><div><div class="canvas-stat-text">Terraform & AWS CDK</div><div class="canvas-stat-sub">Infrastructure as Code for reproducible deployments</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🐳</div><div><div class="canvas-stat-text">Docker & Kubernetes</div><div class="canvas-stat-sub">Container orchestration (EKS, GKE, AKS)</div></div></div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.3s">
-        <div class="canvas-section-title"><i class="fas fa-robot"></i> AI & Data</div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🧠</div><div><div class="canvas-stat-text">LangChain, LangGraph, Temporal.io</div><div class="canvas-stat-sub">Agentic AI orchestration and durable execution</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">📦</div><div><div class="canvas-stat-text">PostgreSQL, Redis, MongoDB</div><div class="canvas-stat-sub">Relational, caching, and document databases</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🔍</div><div><div class="canvas-stat-text">FAISS, ChromaDB, Pinecone</div><div class="canvas-stat-sub">Vector databases for embeddings and RAG</div></div></div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.4s">
-        <div class="canvas-section-title"><i class="fas fa-arrows-spin"></i> DevOps & CI/CD</div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">🚀</div><div><div class="canvas-stat-text">GitHub Actions, Jenkins, ArgoCD</div><div class="canvas-stat-sub">Automated pipelines for testing and deployment</div></div></div>
-        <div class="canvas-stat"><div class="canvas-stat-icon">📈</div><div><div class="canvas-stat-text">Prometheus, Grafana, OpenTelemetry</div><div class="canvas-stat-sub">Observability and monitoring stack</div></div></div>
-      </div>
-    `
-  },
-  aiCloudPassion: {
-    icon: '☁️',
-    title: 'AI & Cloud Passion',
-    body: `
-      <div class="canvas-intro">I am <strong>deeply passionate about AI and Cloud computing</strong>. My career is built at the intersection of intelligent automation and scalable infrastructure — I believe the future belongs to AI-native cloud architectures.</div>
-      <div class="canvas-section" style="animation-delay:.1s">
-        <div class="canvas-section-title"><i class="fas fa-heart"></i> What Drives Me</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🌍 Democratizing AI with Cloud</div>
-          <div class="canvas-card-desc">Making AI accessible through cloud-native architectures. Building platforms where teams can deploy, scale, and monitor AI agents without deep infrastructure expertise.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔬 Bridging Research & Production</div>
-          <div class="canvas-card-desc">Taking cutting-edge AI research — multi-agent systems, durable execution, RAG optimization — and engineering production-grade solutions that enterprises can rely on.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🌱 Continuous Learning</div>
-          <div class="canvas-card-desc">The AI landscape evolves daily. I stay at the forefront by experimenting with new models, contributing to open-source projects, and writing about my findings on Medium and LinkedIn.</div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.2s">
-        <div class="canvas-section-title"><i class="fas fa-trophy"></i> Key Achievements</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🏅 AWS Certified Solutions Architect</div>
-          <div class="canvas-card-desc">Designing highly available, cost-efficient, and fault-tolerant systems on Amazon Web Services.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">💬 LinkedIn Top Voice — AI/ML</div>
-          <div class="canvas-card-desc">Recognized for thought leadership in AI, machine learning, and cloud architecture. Sharing insights with a growing community of technologists.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🏗️ Prodxcloud Ecosystem</div>
-          <div class="canvas-card-desc">Founded and architected Prodxcloud — a multi-tenant SaaS platform for automated provisioning and scaling ML services for high-traffic applications.</div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.3s">
-        <div class="canvas-section-title"><i class="fas fa-share-nodes"></i> Community & Content</div>
-        <div class="canvas-card">
-          <div class="canvas-card-desc">I regularly publish technical deep-dives on <a href="https://joelotepawembo.medium.com/" target="_blank" rel="noopener">Medium</a>, share insights on <a href="https://www.linkedin.com/in/joelwembo/" target="_blank" rel="noopener">LinkedIn</a>, and contribute to open-source on <a href="https://github.com/joelwembo" target="_blank" rel="noopener">GitHub</a>.</div>
-        </div>
-      </div>
-    `
-  },
-  dataCenterArch: {
-    icon: '🏢',
-    title: 'Cloud & Data Center Architecture',
-    body: `
-      <div class="canvas-intro">As a <strong>Cloud & Data Center Architect</strong>, I design high-availability infrastructure that powers mission-critical workloads. My expertise spans physical data center design, hybrid cloud, and enterprise networking.</div>
-      <div class="canvas-section" style="animation-delay:.1s">
-        <div class="canvas-section-title"><i class="fas fa-server"></i> Data Center Design</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🏗️ High-Availability Architecture</div>
-          <div class="canvas-card-desc">Designing Tier III/IV data center architectures with redundant power, cooling, and network paths. Focus on 99.99% uptime for enterprise workloads.</div>
-          <div class="canvas-tags"><span class="canvas-tag">HA Design</span><span class="canvas-tag">Redundancy</span><span class="canvas-tag">Tier III/IV</span></div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔌 Cisco Networking</div>
-          <div class="canvas-card-desc">Enterprise network design using Cisco switches, routers, and firewalls. VLAN segmentation, BGP/OSPF routing, and SD-WAN implementations.</div>
-          <div class="canvas-tags"><span class="canvas-tag">Cisco</span><span class="canvas-tag">BGP</span><span class="canvas-tag">OSPF</span><span class="canvas-tag">SD-WAN</span></div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.2s">
-        <div class="canvas-section-title"><i class="fas fa-cloud-arrow-up"></i> Hybrid & Multi-Cloud</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">☁️ Multi-Cloud Strategy</div>
-          <div class="canvas-card-desc">Architecting workloads across AWS, Azure, and GCP for optimal performance, cost, and compliance. Kubernetes (EKS, GKE, AKS) for portable containerized deployments.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔄 Disaster Recovery & Business Continuity</div>
-          <div class="canvas-card-desc">Designing DR strategies with RPO/RTO targets, cross-region replication, automated failover, and infrastructure-as-code for rapid recovery.</div>
-          <div class="canvas-tags"><span class="canvas-tag">DR Planning</span><span class="canvas-tag">Cross-Region</span><span class="canvas-tag">Auto Failover</span></div>
-        </div>
-      </div>
-      <div class="canvas-section" style="animation-delay:.3s">
-        <div class="canvas-section-title"><i class="fas fa-shield-halved"></i> Security & Compliance</div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">🔐 Zero Trust Architecture</div>
-          <div class="canvas-card-desc">Implementing zero-trust security models with identity-based access, micro-segmentation, and continuous verification across cloud and on-premise environments.</div>
-        </div>
-        <div class="canvas-card">
-          <div class="canvas-card-title">📊 Observability & Monitoring</div>
-          <div class="canvas-card-desc">Full-stack observability with OpenTelemetry, Prometheus, and Grafana. Proactive alerting and automated incident response for infrastructure health.</div>
-          <div class="canvas-tags"><span class="canvas-tag">OpenTelemetry</span><span class="canvas-tag">Prometheus</span><span class="canvas-tag">Grafana</span></div>
-        </div>
-      </div>
-    `
-  }
-};
-
-/* ── Canvas Panel Functions ── */
-function openCanvas(key) {
-  const data = canvasContent[key];
-  if (!data) return;
-  document.getElementById('canvasIcon').textContent = data.icon;
-  document.getElementById('canvasTitle').textContent = data.title;
-  document.getElementById('canvasBody').innerHTML = data.body;
-  document.getElementById('canvasPanel').classList.add('open');
-  document.getElementById('canvasOverlay').classList.add('open');
-  // Close mobile sidebar if open
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebarOverlay').classList.remove('open');
-}
-
-function closeCanvas() {
-  document.getElementById('canvasPanel').classList.remove('open');
-  document.getElementById('canvasOverlay').classList.remove('open');
-}
-
-/* ── Intro animation ── */
-(function(){
-  const c = document.getElementById('introParticles');
-  for(let i=0;i<30;i++){
-    const p = document.createElement('div');
-    p.className='intro-particle';
-    p.style.left = Math.random()*100+'%';
-    p.style.animationDuration = (6+Math.random()*10)+'s';
-    p.style.animationDelay = Math.random()*4+'s';
-    p.style.width = p.style.height = (1+Math.random()*3)+'px';
-    c.appendChild(p);
-  }
-  setTimeout(()=>{
-    const intro = document.getElementById('introScreen');
-    const app = document.getElementById('appWrapper');
-    intro.classList.add('fade-out');
-    app.classList.add('visible');
-    setTimeout(()=>{
-      intro.style.display='none';
-      showWelcome();
-    },800);
-  },2800);
-})();
-
-const msgBox = document.getElementById('messages');
-const input = document.getElementById('userInput');
-
-function toggleSidebar(){
-  document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('sidebarOverlay').classList.toggle('open');
-}
-
-function clearChat(){
-  msgBox.innerHTML='';
-  showWelcome();
-}
-
-function addMsg(html, type, showQuick){
-  const wrap = document.createElement('div');
-  wrap.className = 'msg ' + type;
-  const inner = document.createElement('div');
-  inner.className = 'msg-inner';
-  const av = document.createElement('div');
-  av.className = 'avatar ' + type;
-  av.textContent = type==='bot' ? 'JW' : '🧑';
-  const bub = document.createElement('div');
-  bub.className = 'bubble';
-  bub.innerHTML = html;
-  if(showQuick){
-    const qa = document.createElement('div');
-    qa.className = 'quick-actions';
-    [
-      {t:'Skills & Tech',icon:'🛠️'},
-      {t:'Projects',icon:'🚀'},
-      {t:'Certifications',icon:'🏅'},
-      {t:'Contact Info',icon:'📬'},
-      {t:'Resume',icon:'📄'}
-    ].forEach(item=>{
-      const b = document.createElement('button');
-      b.className='quick-btn';
-      b.textContent=item.icon+' '+item.t;
-      b.onclick=()=>sendQuery(item.t.replace(' Info',''));
-      qa.appendChild(b);
-    });
-    bub.appendChild(qa);
-  }
-  inner.appendChild(av);
-  inner.appendChild(bub);
-  wrap.appendChild(inner);
-  msgBox.appendChild(wrap);
-  msgBox.scrollTop = msgBox.scrollHeight;
-  return wrap;
-}
-
-function showTyping(){
-  const wrap = document.createElement('div');
-  wrap.className='msg bot';
-  wrap.id='typing-ind';
-  const inner = document.createElement('div');
-  inner.className='msg-inner';
-  const av = document.createElement('div');
-  av.className='avatar bot';
-  av.textContent='JW';
-  const bub = document.createElement('div');
-  bub.className='bubble';
-  bub.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
-  inner.appendChild(av);
-  inner.appendChild(bub);
-  wrap.appendChild(inner);
-  msgBox.appendChild(wrap);
-  msgBox.scrollTop = msgBox.scrollHeight;
-}
-
-function removeTyping(){
-  const el = document.getElementById('typing-ind');
-  if(el) el.remove();
-}
-
-function getResponse(q){
-  const l = q.toLowerCase();
-  if(/skill|tech|stack|what can|expertise|know/.test(l)){
-    let html = `<strong>🛠️ Joel's Tech Stack & Core Competencies</strong>`;
-    Object.values(joel.techStack).forEach(cat => {
-      html += `<p style="margin:14px 0 6px;color:var(--text);font-weight:600;font-size:.88rem">${cat.title}</p><ul>${cat.items.map(i=>'<li>'+i+'</li>').join('')}</ul>`;
-    });
-    html += `<p style="margin-top:10px;color:var(--text-dim);font-size:.82rem">Joel is constantly expanding his expertise across AI, Cloud, and Data Center domains.</p>`;
-    return html;
-  }
-  if(/project|work|portfolio|built|ship|research/.test(l)){
-    return `<strong>🚀 Key Projects & Research</strong><ul>${joel.projects.map(p=>'<li>'+p+'</li>').join('')}</ul><p style="margin-top:10px">See more on <a href="${joel.links.github}" target="_blank">GitHub</a> and <a href="${joel.links.medium}" target="_blank">Medium</a>.</p>`;
-  }
-  if(/cert|certification|qualified|credential/.test(l)){
-    return `<strong>🏅 Certifications & Recognitions</strong><ul>${joel.certifications.map(c=>'<li>'+c+'</li>').join('')}</ul>`;
-  }
-  if(/contact|email|reach|hire|connect/.test(l)){
-    return `<strong>📬 Let's Connect!</strong><p style="margin:8px 0">Joel is available worldwide. Reach out through any of these channels:</p><ul><li><a href="${joel.links.linkedin}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li><li><a href="${joel.links.github}" target="_blank"><i class="fab fa-github"></i> GitHub</a></li><li><a href="${joel.links.twitter}" target="_blank"><i class="fab fa-x-twitter"></i> Twitter/X</a></li><li><a href="${joel.links.medium}" target="_blank"><i class="fab fa-medium"></i> Medium</a></li><li><a href="${joel.links.facebook}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li><li><a href="${joel.links.portfolio}" target="_blank"><i class="fas fa-globe"></i> prodxcloud.com</a></li></ul>`;
-  }
-  if(/resume|cv|download/.test(l)){
-    return `<strong>📄 Resume</strong><p style="margin:8px 0">Download Joel's resume to learn more about his experience and qualifications:</p><p><a href="${joel.links.resume}" target="_blank"><i class="fas fa-download"></i> Download Resume (PDF)</a></p>`;
-  }
-  if(/who|about|tell me|bio|joel|yourself/.test(l)){
-    return `<strong>👤 About ${joel.name}</strong><p style="margin:8px 0">${joel.bio}</p><p style="margin:8px 0;color:var(--text-dim);font-size:.85rem">I specialize in building <strong>Durable AI Agents</strong> and scaling mission-critical workloads across multi-cloud environments. My work bridges Cloud, AI/ML, Data Center, Cisco Networking, and Knowledge Engineering.</p><p style="color:var(--text-dim);font-size:.85rem"><i class="fas fa-map-marker-alt"></i> ${joel.location} &nbsp;|&nbsp; <a href="${joel.links.portfolio}" target="_blank">${joel.handle}</a></p>`;
-  }
-  if(/^(hello|hi|hey|yo|sup|greet)/i.test(l)){
-    return `Hey there! 👋 Great to have you here. I'm Joel's AI assistant — I can tell you about his <strong>skills & tech stack</strong>, <strong>key projects & research</strong>, <strong>certifications</strong>, or help you <strong>get in touch</strong>. What interests you?`;
-  }
-  return `I can tell you about Joel's <strong>tech stack</strong>, <strong>key projects & research</strong>, <strong>certifications</strong>, or <strong>contact info</strong>. You can also download his <strong>resume</strong>. What would you like to know? 😊`;
-}
-
-function sendQuery(text){
-  addMsg(text, 'user');
-  input.value = '';
-  showTyping();
-  const delay = 600 + Math.random()*800;
-  setTimeout(()=>{
-    removeTyping();
-    addMsg(getResponse(text), 'bot');
-  }, delay);
-}
-
-function handleSend(){
-  const v = input.value.trim();
-  if(!v) return;
-  sendQuery(v);
-}
-
-input.addEventListener('keydown', e=>{
-  if(e.key==='Enter') handleSend();
-});
-
-function showWelcome(){
-  addMsg("Hi! I'm Joel's AI assistant. Ask me anything about his skills, projects, experience, or how to get in touch. 🚀", 'bot', true);
-}
-</script>
 </body>
 </html>
