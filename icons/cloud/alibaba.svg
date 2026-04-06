@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid">
+  <!-- Alibaba Cloud Official Logo Colors: #FF6A00 (Orange) -->
+  <g transform="translate(20, 40)">
+    <!-- Top bar -->
+    <rect x="0" y="0" width="50" height="20" fill="#FF6A00" rx="2"/>
+    <!-- Middle section with cloud symbol -->
+    <rect x="60" y="0" width="100" height="120" fill="#FF6A00" rx="2"/>
+    <!-- Bottom bar -->
+    <rect x="0" y="40" width="50" height="20" fill="#FF6A00" rx="2"/>
+    <rect x="0" y="80" width="50" height="20" fill="#FF6A00" rx="2"/>
+    <rect x="0" y="120" width="50" height="20" fill="#FF6A00" rx="2"/>
+    
+    <!-- Cloud symbol in center -->
+    <path d="M 90 30 Q 85 20 95 20 Q 100 15 110 20 Q 120 20 120 30 Q 125 30 125 40 Q 125 50 115 50 L 85 50 Q 80 50 80 40 Q 80 30 90 30 Z" fill="#FFFFFF"/>
+    <text x="75" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">阿里云</text>
+    <text x="70" y="105" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF">Alibaba Cloud</text>
+  </g>
+</svg>

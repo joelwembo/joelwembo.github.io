@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid">
+  <!-- Linode (now Akamai) Official Green: #00B050 -->
+  <circle cx="100" cy="100" r="95" fill="#00B050"/>
+  
+  <!-- Linode geometric pattern -->
+  <g transform="translate(40, 30)">
+    <!-- Main geometric shape representing network nodes -->
+    <path d="M 60 10 L 110 40 L 100 120 L 20 140 L 5 100 Z" fill="#FFFFFF" stroke="#00B050" stroke-width="2"/>
+    
+    <!-- Inner pattern -->
+    <path d="M 60 25 L 95 45 L 88 105 L 30 120 L 18 95 Z" fill="#00B050" opacity="0.3"/>
+    
+    <!-- Network nodes -->
+    <circle cx="60" cy="10" r="6" fill="#FFFFFF"/>
+    <circle cx="110" cy="40" r="5" fill="#FFFFFF"/>
+    <circle cx="100" cy="120" r="5" fill="#FFFFFF"/>
+    <circle cx="20" cy="140" r="5" fill="#FFFFFF"/>
+    <circle cx="5" cy="100" r="5" fill="#FFFFFF"/>
+    
+    <!-- Connection lines -->
+    <line x1="60" y1="10" x2="110" y2="40" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="110" y1="40" x2="100" y2="120" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="100" y1="120" x2="20" y2="140" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="20" y1="140" x2="5" y2="100" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <line x1="5" y1="100" x2="60" y2="10" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+  </g>
+</svg>
