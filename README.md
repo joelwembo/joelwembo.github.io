@@ -1,3 +1,28 @@
+Founder & Chief AI Researcher | prodxcloud
+
+At prodxcloud, I architect and build a next-generation multi-cloud platform 
+that combines cloud-native infrastructure with agentic AI — designed for 
+engineering teams that need to move fast without losing control.
+
+What prodxcloud delivers:
+→ Multi-cloud orchestration across AWS, Azure, GCP, Cloudflare, and on-prem 
+  using Terraform, Kubernetes, and Ansible
+→ Agentic DevOps automation — self-healing infrastructure, intelligent 
+  provisioning, and AI-driven operations
+→ prodxcloud Studio — a Kubernetes-powered browser IDE (free-tier, 
+  competing with Google Firebase Studio) for developers and non-technical teams
+→ Fine-tuned LLMs for cloud/DevOps intelligence (va_llm_cloud_v1) and 
+  content/data recommendation (va_llm_specialist)
+→ Node-based SaaS delivery with per-tenant isolation, GitOps workflows, 
+  SOC 2-ready guardrails, and SSO
+
+I believe the future of infrastructure is not just automated — it's intelligent, 
+context-aware, and self-optimizing. prodxcloud is my proof of concept and 
+commercial execution of that vision.
+
+Stack: Kubernetes · Terraform · Ansible · AWS · Azure · GCP · Cloudflare · 
+LangChain · Anthropic · OpenAI · Cisco · PostgreSQL · Docker · GitOps
+
 ## 👨‍💻 What I Build @ prodxcloud
 
 **prodxcloud** is a multi-cloud, agentic infrastructure platform engineered for 
