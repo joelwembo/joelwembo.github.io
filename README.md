@@ -1,4 +1,4 @@
-Founder & Chief AI Researcher | prodxcloud
+Founder & Chief AI Researcher | prodxcloud.com | joelwembo.com
 
 At prodxcloud, I architect and build a next-generation multi-cloud platform 
 that combines cloud-native infrastructure with agentic AI — designed for 
